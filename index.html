@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>On Brand</title>
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet" type="text/css">
+    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.7.3/firebase-ui-auth.css" />
     <style>
         .bg-storm
         {
@@ -29,15 +30,44 @@
             font-family: Montserrat;
             src: url(fonts/Montserrat-Regular.ttf)
         }
+        .minimum-height
+        {
+            min-height: 400px;
+        }
 
     </style>
 </head>
-<body class="apple">
+<body class="bg-storm">
 
-    <div class="bg-tan text-storm bg-tan p-10">
-       Hello my name is Brian
+    
+    <div class="sign-in-or-sign-out w-full my-16"></div>
+    
+
+    <div class="products pt-8 pl-16 pr-16 pb-16 md:flex md:flex-wrap">
 
     </div>
-    
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+     <script src="https://www.gstatic.com/firebasejs/8.2.8/firebase-auth.js"></script>
+     <script src="https://www.gstatic.com/firebasejs/8.2.8/firebase-firestore.js"></script>
+     <script src="https://www.gstatic.com/firebasejs/ui/4.7.3/firebase-ui-auth.js"></script>
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyAqehWmWJG8VidrDL_FYVby3ssoRODuYO8",
+    authDomain: "kiei-451-ab7d5.firebaseapp.com",
+    projectId: "kiei-451-ab7d5",
+    storageBucket: "kiei-451-ab7d5.appspot.com",
+    messagingSenderId: "942506131765",
+    appId: "1:942506131765:web:7be4540e5d71ed0fc9cc7c"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+</script>
+    <script src="onbrand.js"></script>
 </body>
 </html>
