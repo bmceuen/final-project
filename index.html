@@ -35,6 +35,62 @@
             min-height: 400px;
         }
 
+        /* The side navigation menu */
+.sidebar {
+  margin: 0;
+  padding: 0;
+  /* width: 200px; */
+  background-color: #f1f1f1;
+  position: absolute;
+  /* height: 100%; */
+  overflow: auto;
+}
+
+/* Sidebar links */
+.sidebar a {
+  display: block;
+  color:#294F6B;
+  padding: 16px;
+  text-decoration: none;
+}
+
+/* Active/current link */
+.sidebar a.active {
+  background-color: #D0A363;
+  color: #294F6B;
+}
+
+/* Links on mouse-over */
+.sidebar a:hover:not(.active) {
+  background-color: #555;
+  color: white;
+}
+
+/* Page content. The value of the margin-left property should match the value of the sidebar's width property */
+div.content {
+  margin-left: 200px;
+  padding: 1px 16px;
+  height: 1000px;
+}
+
+/* On screens that are less than 700px wide, make the sidebar into a topbar */
+@media screen and (max-width: 700px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+  .sidebar a {float: left;}
+  div.content {margin-left: 0;}
+}
+
+/* On screens that are less than 400px, display the bar vertically, instead of horizontally */
+@media screen and (max-width: 400px) {
+  .sidebar a {
+    text-align: center;
+    float: none;
+  }
+}
     </style>
 </head>
 <body class="bg-white">
@@ -48,11 +104,36 @@
 
     <div class="sign-in-or-sign-out md:w-full"></div>
 
+    <div class="sidebar md:w-1/5 md:h-screen text-center">
+        <div class="userinfo p-4 break-words"></div>
+        <ul>
+            <li>
+                <a href="#home">Home</a>
+            </li>
+            <li>
+                <a href="#t-shirt">T-Shirt</a>
+            </li>
+            <li>
+                <a href="#denim">Denim</a>
+            </li>
+            <li>
+                <a href="#pants">Pants</a>
+            </li>
+            <li>
+                <a href="#shoes">Shoes</a>
+            </li>
+        </ul>
+      </div>
+
     <div class="products md:w-4/5 md:float-right pt-8 pl-16 pr-16 pb-16 ml-8 md:flex md:flex-wrap">
     </div>
    
-    <div class="sidebar md:w-1/5 bg-gray-100 relative px-2 text-center bottom-0 md:pt-8 md:top-0 md:left-0 md:h-screen md:border-r-4 md:border-gray-600">
+    <div class="quiz">        
+    </div>
+    
+    <!-- <div class="sidebar md:w-1/5 bg-gray-100 relative px-2 text-center bottom-0 md:pt-8 md:top-0 md:left-0 md:h-screen md:border-r-4 md:border-gray-600">
         <div class="md:relative mx-auto lg:float-right lg:px-6">
+           <div class="user-details block py-1 mr-3 md:py-3 pl-1 align-middle text-gray-800 no-underline"></div>
            <ul class="list-reset flex flex-row md:flex-col text-center md:text-left">
               <li class="mr-3 flex-1">
                  <a href="#" class="block py-1 md:py-3 pl-1 align-middle text-gray-800 no-underline hover:text-pink-500 border-b-2 border-gray-800 md:border-gray-900 hover:border-pink-500">
@@ -76,11 +157,7 @@
               </li>
            </ul>
         </div>
-     </div>
-
-    <div class="quiz">        
-    </div>
-    
+     </div> -->    
 
 <!-- 
 </div> -->

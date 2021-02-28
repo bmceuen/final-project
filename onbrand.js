@@ -9,10 +9,15 @@ firebase.auth().onAuthStateChanged(async function(user)
         // let finalResult = result.userId
         // console.log(finalResult)
 
-        let loginDiv = document.querySelector('.sign-in-or-sign-out')
-        loginDiv.classList.add('border-2', 'text-black', 'text-center')
-        loginDiv.innerHTML = `You Are Currently Logged In As:<br>${user.email}<br><br>
+        // let loginDiv = document.querySelector('.sign-in-or-sign-out')
+        // loginDiv.classList.add('border-2', 'text-black', 'text-center')
+        // loginDiv.innerHTML = `You Are Currently Logged In As:<br>${user.email}<br><br>
+        // <button class="sign-out-button bg-tan text-bold text-storm px-4 py-2 rounded-xl">Sign-Out</button>`
+
+        document.querySelector('.userinfo').insertAdjacentHTML('beforeend',
+        `Hello ${user.displayName}! <br>
         <button class="sign-out-button bg-tan text-bold text-storm px-4 py-2 rounded-xl">Sign-Out</button>`
+        )
 
         let productsDiv = document.querySelector('.products')
         document.querySelector('.sign-out-button').addEventListener('click', async function(event){
