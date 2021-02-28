@@ -10,7 +10,7 @@ firebase.auth().onAuthStateChanged(async function(user)
         // console.log(finalResult)
 
         let loginDiv = document.querySelector('.sign-in-or-sign-out')
-        loginDiv.classList.add('border-2', 'text-white', 'text-center')
+        loginDiv.classList.add('border-2', 'text-black', 'text-center')
         loginDiv.innerHTML = `You Are Currently Logged In As:<br>${user.email}<br><br>
         <button class="sign-out-button bg-tan text-bold text-storm px-4 py-2 rounded-xl">Sign-Out</button>`
 
@@ -43,10 +43,10 @@ firebase.auth().onAuthStateChanged(async function(user)
                     <img src="${productImage}" class="border-2 border-black hover:opacity-80">
                 </a>
                 <div class="mt-2 justify-center">
-                    <p class="text-center text-2xl text-bold text-white">${brand}</p>
+                    <p class="text-center text-2xl text-bold text-black">${brand}</p>
                 </div>
-                <div class="text-white text-center text-xl text-bold">${productName}</div>
-                <div class="text-white text-center text-2xl text-bold">${productPrice}</div>
+                <div class="text-black text-center text-xl text-bold">${productName}</div>
+                <div class="text-black text-center text-2xl text-bold">${productPrice}</div>
             </div>
 
             `)
