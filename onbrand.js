@@ -14,6 +14,10 @@ firebase.auth().onAuthStateChanged(async function(user)
         // }
 
         let category = 'denim'
+        let categoryTitle = category.toUpperCase()
+        document.querySelector('.category-title').insertAdjacentHTML('beforeend',
+        `${categoryTitle}`
+        )
 
         let docRef = await db.collection('answers').doc(`${user.uid}-${category}`).get()
         let result = docRef.data()
