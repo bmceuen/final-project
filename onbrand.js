@@ -95,6 +95,11 @@ firebase.auth().onAuthStateChanged(async function(user)
                document.querySelector(`.product-${productID} .product-image`).classList.remove('opacity-60')
            })
            
+           document.querySelector(`.product-${productID} .btn`).addEventListener('click', function (event)
+           {
+               event.preventDefault()
+               document.querySelector(`.product-${productID} .product-image`).classList.add('border-4', 'border-yellow-500','transition', 'duration-500', 'ease-in-out', 'transform', 'hover:-translate-y-1', 'hover:scale-110')
+           })
         
             }
            
