@@ -18,18 +18,25 @@ firebase.auth().onAuthStateChanged(async function(user)
         let docRef = await db.collection('answers').doc(`${user.uid}-${category}`).get()
         let result = docRef.data()
 
+        let categoryTitle = category.toUpperCase()
+        document.querySelector('.category-title').insertAdjacentHTML('beforeend',
+        `${categoryTitle}`
+        )
 
-        let loginDiv = document.querySelector('.sign-in-or-sign-out')
-        loginDiv.classList.add('border-2', 'text-white', 'text-center', 'mx-16', 'mr-8')
-        loginDiv.innerHTML = `You Are Currently Logged In As:<br>${user.email}<br><br>
-        <button class="sign-out-button bg-tan text-bold text-storm px-4 py-2 rounded-xl">Sign-Out</button>`
+        // let loginDiv = document.querySelector('.sign-in-or-sign-out')
+        // loginDiv.classList.add('border-2', 'text-black', 'text-center', 'mx-16', 'mr-8')
+        // loginDiv.innerHTML = `You Are Currently Logged In As:<br>${user.email}<br><br>
+        // <button class="sign-out-button bg-tan text-bold text-storm px-4 py-2 rounded-xl">Sign-Out</button>
 
-        let productsDiv = document.querySelector('.products')
-        document.querySelector('.sign-out-button').addEventListener('click', async function(event){
-            productsDiv.classList.add('hidden')
-            firebase.auth().signOut()
-            document.location.href = 'index.html'
-        })
+        document.querySelector('.userinfo').insertAdjacentHTML('beforeend',
+        `Hello ${user.displayName}! <br>`)
+
+        // let productsDiv = document.querySelector('.products')
+        // document.querySelector('.sign-out-button').addEventListener('click', async function(event){
+        //     productsDiv.classList.add('hidden')
+        //     firebase.auth().signOut()
+        //     document.location.href = 'index.html'
+        // })
         
         
 
@@ -69,10 +76,10 @@ firebase.auth().onAuthStateChanged(async function(user)
                 <button class="btn hidden">👍</button>
                 <button class="btn2 hidden">👎</button>
                 <div class="mt-2 justify-center">
-                    <p class="text-center text-2xl text-bold text-white">${brand}</p>
+                    <p class="text-center text-2xl text-bold text-black">${brand}</p>
                 </div>
-                <div class="text-white text-center text-xl text-bold">${productName}</div>
-                <div class="text-white text-center text-2xl text-bold">${productPrice}</div>
+                <div class="text-black text-center text-xl text-bold">${productName}</div>
+                <div class="text-black text-center text-2xl text-bold">${productPrice}</div>
             </div>
             </div>
             `)
