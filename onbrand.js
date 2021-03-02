@@ -1,7 +1,6 @@
 let db = firebase.firestore()
 firebase.auth().onAuthStateChanged(async function(user)
 {
-    
     if (user)
     {
 
@@ -15,8 +14,7 @@ firebase.auth().onAuthStateChanged(async function(user)
 
         let category = 'denim'
 
-        let docRef = await db.collection('answers').doc(`${user.uid}-${category}`).get()
-        let result = docRef.data()
+        
 
         let categoryTitle = category.toUpperCase()
         document.querySelector('.category-title').insertAdjacentHTML('beforeend',
@@ -29,7 +27,20 @@ firebase.auth().onAuthStateChanged(async function(user)
         // <button class="sign-out-button bg-tan text-bold text-storm px-4 py-2 rounded-xl">Sign-Out</button>
 
         document.querySelector('.userinfo').insertAdjacentHTML('beforeend',
-        `Hello ${user.displayName}! <br>`)
+        `Hello ${user.displayName}! <br>
+        <button class="sign-out-button bg-tan text-bold text-storm px-4 py-2 rounded-xl">Sign-Out</button>`
+        )
+        let productsDiv = document.querySelector('.products')
+        let sideNavDiv = document.querySelector('.sidebar')
+        document.querySelector('.sign-out-button').addEventListener('click', function(event)
+        {
+            event.preventDefault()
+            productsDiv.classList.add('hidden')
+            sideNavDiv.classList.add('invisible')
+            firebase.auth().signOut()
+            document.location.href = 'login.html'
+
+        })
 
         // let productsDiv = document.querySelector('.products')
         // document.querySelector('.sign-out-button').addEventListener('click', async function(event){
@@ -38,14 +49,10 @@ firebase.auth().onAuthStateChanged(async function(user)
         //     document.location.href = 'index.html'
         // })
         
-        
+        let docRef = await db.collection('answers').doc(`${user.uid}-${category}`).get()
+        let result = docRef.data()
 
         let printProducts = async function()
-        {
-            
-        }
-
-        if(result)
         {
             let findBrand = await db.collection('answers').doc(`${user.uid}-${category}`).get()
             let brandMatch = findBrand.data()
@@ -90,7 +97,8 @@ firebase.auth().onAuthStateChanged(async function(user)
                document.querySelector(`.product-${productID} .buynow`).classList.remove('hidden')
                document.querySelector(`.product-${productID} .btn`).classList.remove('hidden')
                document.querySelector(`.product-${productID} .btn2`).classList.remove('hidden')
-               document.querySelector(`.product-${productID} .product-image`).classList.add('opacity-60')
+               document.querySelector(`.product-${productID} .product-image`).classList.add('opacity-80')
+               document.querySelector(`.product-${productID} .product-image`).classList.add('transition', 'duration-500', 'ease-in-out', 'transform', 'hover:-translate-y-1', 'hover:scale-110')
            })
             
            document.querySelector(`.product-${productID}`).addEventListener('mouseout', function (event)
@@ -99,27 +107,24 @@ firebase.auth().onAuthStateChanged(async function(user)
                document.querySelector(`.product-${productID} .buynow`).classList.add('hidden')
                document.querySelector(`.product-${productID} .btn`).classList.add('hidden')
                document.querySelector(`.product-${productID} .btn2`).classList.add('hidden')
-               document.querySelector(`.product-${productID} .product-image`).classList.remove('opacity-60')
+               document.querySelector(`.product-${productID} .product-image`).classList.remove('opacity-80')
+               document.querySelector(`.product-${productID} .product-image`).classList.add('transition', 'duration-900', 'ease-in-out', 'transform', 'hover:-translate-y-1', 'hover:scale-110')
            })
-           
-           document.querySelector(`.product-${productID} .btn`).addEventListener('click', function (event)
-           {
-               event.preventDefault()
-               document.querySelector(`.product-${productID} .product-image`).classList.add('border-4', 'border-yellow-500','transition', 'duration-500', 'ease-in-out', 'transform', 'hover:-translate-y-1', 'hover:scale-110')
-           })
-        
-            }
+        }
+    }
+
+        if(result)
+        {
+           printProducts()
            
         }
         else
         {
-    
-        
-        document.querySelector('.quiz').insertAdjacentHTML('beforeend', `
+        productsDiv.insertAdjacentHTML('beforeend', `
         <div class="border-2 border-white m-8">
-        <form class="quiz text-center text-white">
+        <form class="quiz text-center text-black">
         
-            <p class="text-white">What is your favorite ${category} brand?</p>
+            <p class="text-black">What is your favorite ${category} brand?</p>
             <input type="radio" id="levi's" name="denim" value="Levi's">
             <label for="Levi's">Levi's</label><br>
 
@@ -145,16 +150,11 @@ firebase.auth().onAuthStateChanged(async function(user)
             })
             document.querySelector('.quiz').classList.add('hidden')
             printProducts()
-            
-            
         })
 
         
-    }
+        }
     
-        
-        
-            
         db.collection('users').doc(user.uid).set({
             name: user.displayName,
             email: user.email
@@ -167,19 +167,21 @@ firebase.auth().onAuthStateChanged(async function(user)
         
        
     }
-    
+
     else
     {
-        let ui = new firebaseui.auth.AuthUI(firebase.auth())
 
-        let authUIConfig = 
-        {
-            signInOptions:
-            [
-                firebase.auth.EmailAuthProvider.PROVIDER_ID
-            ],
-            signInSuccessURL: `index.html`
-        }
-        ui.start(`.sign-in-or-sign-out`, authUIConfig)
+        document.location.href = 'login.html'
+        // let ui = new firebaseui.auth.AuthUI(firebase.auth())
+
+        // let authUIConfig = 
+        // {
+        //     signInOptions:
+        //     [
+        //         firebase.auth.EmailAuthProvider.PROVIDER_ID
+        //     ],
+        //     signInSuccessURL: `index.html`
+        // }
+        // ui.start(`.sign-in-or-sign-out`, authUIConfig)
     }
 })
