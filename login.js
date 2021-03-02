@@ -1,9 +1,6 @@
 let db = firebase.firestore()
 firebase.auth().onAuthStateChanged(async function(user)
 {
-
-
-
         let ui = new firebaseui.auth.AuthUI(firebase.auth())
 
         let authUIConfig = 
