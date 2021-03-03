@@ -155,10 +155,10 @@ firebase.auth().onAuthStateChanged(async function(user)
         
         }
     
-        db.collection('users').doc(user.uid).set({
-            name: user.displayName,
-            email: user.email
-        })
+        // db.collection('users').doc(user.uid).set({
+        //     name: user.displayName,
+        //     email: user.email
+        // })
         
         
         // console.log(user.uid)
