@@ -95,7 +95,9 @@ firebase.auth().onAuthStateChanged(async function(user)
                 // console.log(answer)
             
 
-            let productList = await db.collection('products').where('brand', '==',answer.answer).get()
+            let productList = await db.collection('products').where('brand', '==',answer.answer)
+                                                            .where('category', '==', answer.category)                                            
+                                                            .get()
             // console.log(productList)
             let products = productList.docs
             for(let i=0; i<products.length;i++)
@@ -113,7 +115,7 @@ firebase.auth().onAuthStateChanged(async function(user)
             <div class="product-grid">
             <div class="product-${productID} p-4">
                 <a href="${productURL}" target="popup" onclick="window.open('${productURL}','name','width=1400, height=1000')">
-                    <img src="${productImage}" class="product-image border-2 border-black min-h-1400">
+                    <img src="${productImage}" class="product-image border-2 border-black min-h-2000">
                 </a>
                 <button class="buynow hidden">BUY NOW</button>
                 <button class="btn hidden">👍</button>
@@ -121,8 +123,8 @@ firebase.auth().onAuthStateChanged(async function(user)
                 <div class="mt-2 justify-center">
                     <p class="text-center text-2xl text-bold text-black">${brand}</p>
                 </div>
-                <div class="text-black text-center text-xl text-bold">${productName}</div>
-                <div class="text-black text-center text-2xl text-bold">${productPrice}</div>
+                <div class="text-black text-center text-l text-bold">${productName}</div>
+                <div class="text-black text-center text-xl text-bold">${productPrice}</div>
             </div>
             </div>
             `)
@@ -195,6 +197,9 @@ firebase.auth().onAuthStateChanged(async function(user)
                     <input type="radio" id="Gap" name="tshirts" value="Gap">
                     <label for="Gap">Gap</label><br>
 
+                    <input type="radio" id="Bylt Basics" name="tshirts" value="Bylt Basics">
+                    <label for="Bylt Basics">Bylt Basics</label><br>
+
                     <button class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-xl">Submit</button>
                 </form>
                 </div>
@@ -214,8 +219,8 @@ firebase.auth().onAuthStateChanged(async function(user)
                     <input type="radio" id="Nike" name="sneakers" value="Nike">
                     <label for="Nike">Nike</label><br>
 
-                    <input type="radio" id="adidas" name="sneakers" value="adidas">
-                    <label for="adidas">adidas</label><br>
+                    <input type="radio" id="Greats" name="sneakers" value="Greats">
+                    <label for="Greats">Greats</label><br>
 
                     <button class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-xl">Submit</button>
                 </form>
