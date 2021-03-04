@@ -102,12 +102,12 @@ firebase.auth().onAuthStateChanged(async function(user)
             {
                 let productData = products[i].data()
                 
-                let productImage = productData.product_image
+                let productImage = productData.image_url
                 let productName = productData.product_name
                 let productURL = productData.url
                 let productPrice = productData.price
                 let brand = productData.brand
-                let productID = productData.productID
+                let productID = productData.product_number
             
             document.querySelector('.products').insertAdjacentHTML('beforeend', `
             <div class="product-grid">
@@ -186,14 +186,14 @@ firebase.auth().onAuthStateChanged(async function(user)
                 <form class="quiz text-center text-black">
                 
                     <p class="text-black">What is your favorite ${category} brand?</p>
-                    <input type="radio" id="levi's" name="tshirts" value="Levi's">
-                    <label for="Levi's">Levi's</label><br>
+                    <input type="radio" id="Buck Mason" name="tshirts" value="Buck Mason">
+                    <label for="Buck Mason">Buck Mason</label><br>
+
+                    <input type="radio" id="Everlane" name="tshirts" value="Everlane">
+                    <label for="Everlane">Everlane</label><br>
 
                     <input type="radio" id="Gap" name="tshirts" value="Gap">
                     <label for="Gap">Gap</label><br>
-
-                    <input type="radio" id="Lucky" name="tshirts" value="Lucky">
-                    <label for="Lucky">Lucky</label><br>
 
                     <button class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-xl">Submit</button>
                 </form>
