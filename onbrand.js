@@ -296,7 +296,7 @@ firebase.auth().onAuthStateChanged(async function(user)
                     </div>
                     <div class="text-black text-center text-l text-bold">${productName}</div>
                     <div class="text-black text-center text-xl text-bold">${productPrice}</div>
-                </div>
+                </div> 
                 </div>
                 `)
             document.querySelector(`.product-${productID}`).addEventListener('mouseover', function (event)
