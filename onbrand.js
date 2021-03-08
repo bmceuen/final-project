@@ -7,7 +7,7 @@ firebase.auth().onAuthStateChanged(async function(user)
         
                     let querySnapshot1 = await db.collection('answers')
                                                 .where('userId', '==', user.uid)
-                                                .where('category', '==', 'tshirts')
+                                                .where('category', '==', 't-shirts')
                                                 .get()
                     let findAnswer1 = querySnapshot1.docs
                     
@@ -42,7 +42,7 @@ firebase.auth().onAuthStateChanged(async function(user)
                     }
                     else
                     {
-                        category = 'tshirts'
+                        category = 't-shirts'
                     }
          
         
@@ -160,6 +160,8 @@ firebase.auth().onAuthStateChanged(async function(user)
       //THIS PRINTS THE PRODUCTS FOR DENIM CATEGORY
         let printProducts = async function()
         {
+            if(category == 'denim')
+            {
             productsDiv.innerHTML = ''
             let findAnswers= await db.collection('answers')
                                     .where('userId', '==', user.uid)
@@ -184,10 +186,7 @@ firebase.auth().onAuthStateChanged(async function(user)
                 console.log(fitAnswer)
             
             
-            if(category == 'denim')
-            {
-                
-                let productList = await db.collection('products').where('brand', '==',answer.answer)
+            let productList = await db.collection('products').where('brand', '==',answer.answer)
                                                                 .where('category', '==', answer.category)
                                                                 .where('pant_fit', '==', fitAnswer.pant_fit)                                            
                                                                 .get()
@@ -242,15 +241,36 @@ firebase.auth().onAuthStateChanged(async function(user)
                     })
                 }
             }
+        }
+    }
             
             //THIS PRINTS THE PRODUCTS FOR NON DENIM CATEGORIES
             else
             {
-            let productList = await db.collection('products').where('brand', '==',answer.answer)
+            productsDiv.innerHTML = ''
+            let findAnswers= await db.collection('answers')
+                                    .where('userId', '==', user.uid)
+                                    .where('category','==', category)
+                                    .get()
+            let answers = findAnswers.docs
+            
+
+            for (let j = 0;j<answers.length;j++)
+            {
+                let answer = answers[j].data()
+                
+                console.log(answer.answer)
+                console.log(answer.category)
+                
+            let productList = await db.collection('products').where('brand', '==', answer.answer)
                                                             .where('category', '==', answer.category)                                            
                                                             .get()
+
+            
             
             let products = productList.docs
+            console.log(products)
+            
                 for(let i=0; i<products.length;i++)
                 {
                     let productData = products[i].data()
@@ -261,11 +281,6 @@ firebase.auth().onAuthStateChanged(async function(user)
                     let productPrice = productData.price
                     let brand = productData.brand
                     let productID = productData.product_number
-
-                    await db.collection(`${user.uid}-products`).doc().set({
-                        userId: user.uid,
-                        productID: productID
-                    })
                 
                 document.querySelector('.products').insertAdjacentHTML('beforeend', `
                 <div class="product-grid">
@@ -305,9 +320,10 @@ firebase.auth().onAuthStateChanged(async function(user)
                     })
                 }
             }
+            }
          }
-        }
-    }
+        
+    
         
         if(findAnswer1.length>0 && findAnswer2.length>0 && findAnswer3.length>0) //this checks to see if they have they answered all the quiz questions
         {
@@ -391,7 +407,7 @@ firebase.auth().onAuthStateChanged(async function(user)
                 </div>
                 `)
             }
-            else if(category == 'tshirts')
+            else if(category == 't-shirts')
             {
                 productsDiv.insertAdjacentHTML('beforeend', `
                 <div class="border-2 border-white m-8">
@@ -399,16 +415,16 @@ firebase.auth().onAuthStateChanged(async function(user)
                 
                     <p class="text-black">What is your favorite ${category} brand?</p>
 
-                    <input type="radio" id="Buck Mason" name="tshirts" value="Buck Mason">
+                    <input type="radio" id="Buck Mason" name="t-shirts" value="Buck Mason">
                     <label for="Buck Mason">Buck Mason</label><br>
 
-                    <input type="radio" id="Everlane" name="tshirts" value="Everlane">
+                    <input type="radio" id="Everlane" name="t-shirts" value="Everlane">
                     <label for="Everlane">Everlane</label><br>
 
-                    <input type="radio" id="Gap" name="tshirts" value="Gap">
+                    <input type="radio" id="Gap" name="t-shirts" value="Gap">
                     <label for="Gap">Gap</label><br>
 
-                    <input type="radio" id="Bylt Basics" name="tshirts" value="Bylt Basics">
+                    <input type="radio" id="Bylt Basics" name="t-shirts" value="Bylt Basics">
                     <label for="Bylt Basics">Bylt Basics</label><br>
 
                     <button class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-xl">Submit</button>
@@ -475,7 +491,7 @@ firebase.auth().onAuthStateChanged(async function(user)
 
                  let querySnapshot1 = await db.collection('answers')
                              .where('userId', '==', user.uid)
-                             .where('category', '==', 'tshirts')
+                             .where('category', '==', 't-shirts')
                              .get()
                  let findAnswer1 = querySnapshot1.docs
             
@@ -507,7 +523,7 @@ firebase.auth().onAuthStateChanged(async function(user)
                  }
                  else
                  {
-                 category = 'tshirts'
+                 category = 't-shirts'
                  }
                  document.location.href = 'index.html'
          }) 
@@ -521,10 +537,10 @@ firebase.auth().onAuthStateChanged(async function(user)
             printProducts()
             adjustCategory()
         })
-        document.querySelector('.tshirts').addEventListener('click', async function(event)
+        document.querySelector('.t-shirts').addEventListener('click', async function(event)
         {
             event.preventDefault()
-            category = 'tshirts'
+            category = 't-shirts'
             printProducts()
             adjustCategory()
         })
@@ -537,6 +553,8 @@ firebase.auth().onAuthStateChanged(async function(user)
             adjustCategory()
         })
     }
+
+
 
     
 
