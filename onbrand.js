@@ -203,11 +203,6 @@ firebase.auth().onAuthStateChanged(async function(user)
                     let productPrice = productData.price
                     let brand = productData.brand
                     let productID = productData.product_number
-
-                    await db.collection(`${user.uid}-products`).doc().set({
-                        userId: user.uid,
-                        productID: productID
-                    })
                 
                 document.querySelector('.products').insertAdjacentHTML('beforeend', `
                 <div class="product-grid">
