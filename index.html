@@ -31,9 +31,29 @@
             font-family: Montserrat;
             src: url(fonts/Montserrat-Regular.ttf)
         }
+
+        @font-face
+        {
+            font-family: Montserrat;
+            src: url(fonts\Montserrat-Bold.ttf);
+            font-weight: bold;
+
+        }
+
         .minimum-height
         {
             min-height: 400px;
+        }
+
+        .Montserrat
+        {
+          font-family: Montserrat;
+        }
+
+        .Montserrat-bold
+        {
+          font-family: Montserrat;
+          font-weight: bold;
         }
 
         .product-grid {
@@ -61,6 +81,7 @@
           border: none;
           cursor: pointer;
           border-radius: 5px;
+          font-family: Montserrat;
         }
 
         .product-grid .btn {
@@ -178,8 +199,8 @@
     <div class="sign-in-or-sign-out md:w-full"></div>
 
     <div class="sidebar md:w-1/5 md:h-screen text-center bg-white">
-        <div class="userinfo p-4 break-words"></div>
-        <div class="filters hidden">
+        <div class="userinfo p-4 break-words Montserrat"></div>
+        <div class="filters hidden Montserrat">
           <form>
             <label for="cars">Choose a car:</label>
             <select name="cars" id="cars">
@@ -321,7 +342,7 @@
 
     </div>
 
-    <div class="category-title text-storm text-center text-5xl md:w-4/5 pt-4 pl-16 pr-16 ml-8 md:border-b-4 md:border-tan md:float-right md:flex md:flex-wrap">
+    <div class="category-title Montserrat text-storm text-center text-5xl md:w-4/5 pt-4 pl-16 pr-16 ml-8 md:border-b-4 md:border-tan md:float-right md:flex md:flex-wrap">
     </div>
 
     <div class="products md:w-4/5 md:float-right pt-4 pl-16 pr-16 pb-16 ml-8 md:flex md:flex-wrap">

@@ -70,7 +70,7 @@ firebase.auth().onAuthStateChanged(async function(user)
         //THIS SHOWS USER INFO
         document.querySelector('.userinfo').insertAdjacentHTML('beforeend',
         `Hello ${user.displayName}! <br>
-        <button class="sign-out-button bg-tan text-bold text-storm px-4 py-2 rounded-xl">Sign-Out</button>`
+        <button class="sign-out-button Montserrat-bold bg-tan text-bold text-storm px-4 py-2 rounded-xl">Sign-Out</button>`
         )
 
         //THIS SHOWS FILTERS
