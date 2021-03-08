@@ -8,10 +8,7 @@
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet" type="text/css">
     <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.7.3/firebase-ui-auth.css" />
     <style>
-      .elephant
-        {
-          background-image: url("C:\code\final-project-1\images\outerwear.png");
-        }
+      
         .bg-storm
         {
             background-color: #294f6b;
@@ -182,6 +179,21 @@
 
     <div class="sidebar md:w-1/5 md:h-screen text-center bg-white">
         <div class="userinfo p-4 break-words"></div>
+        <div class="filters hidden">
+          <form>
+            <label for="cars">Choose a car:</label>
+            <select name="cars" id="cars">
+              <option value="volvo">Volvo</option>
+              <option value="saab">Saab</option>
+              <option value="opel">Opel</option>
+              <option value="audi">Audi</option>
+            </select>
+            <br><br>
+            <input type="submit" value="Submit">
+          </form>
+          
+
+        </div>
           <ul>
             <!-- <li>
                 <a href="#">
