@@ -57,6 +57,37 @@ firebase.auth().onAuthStateChanged(async function(user)
         let productsDiv = document.querySelector('.products')
         let sideNavDiv = document.querySelector('.sidebar')
 
+        // function for quiz form
+        // function renderQuiz(brandsArray){
+            // productsDiv.insertAdjacentHTML('beforeend', `
+            // <div class="selector border-2 border-gray-100 p-8">
+            //     <form class="quiz text-center text-black">
+
+            //     <p class="text-black text-xl p-4">What is your favorite ${category} brand?</p>
+            
+            //     <div class="quizImages flex">
+            // `)
+            // for (let i= 0; i<brandsArray.length; i++) {
+            //     let company = brandsArray[i]
+            //     productsDiv.insertAdjacentHTML('beforeend', `        
+            //         <input type="radio" id=${company.brand} name=${company.category} value=${company.brand}/>
+            //         <label class="quizOption" for=${company.brand}>
+            //         <img src=${company.image}></img>
+            //         </label>
+            // }
+            // `)
+
+            // productsDiv.insertAdjacentHTML('beforeend', `
+            //     </div>
+
+            //     <button class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 mt-8 rounded-xl">Submit</button>
+                
+
+            //     </form>
+            // </div>
+            // `)
+        // }
+
         //THIS CHANGES THE PRODUCT CATEOGORY AS YOU NAVIGATE
         let adjustCategory = function()
         {
@@ -338,25 +369,55 @@ firebase.auth().onAuthStateChanged(async function(user)
                 {
 
                     //CHECK DENIM FIT QUESTION
-                    productsDiv.insertAdjacentHTML('beforeend', `    
-                    <div class="border-2 border-white m-8">
-                    <form class="quiz text-center text-black justify-center">
-                    
-                        <p class="text-black">What is your preferred pant fit?</p>
-    
-                        <input type="radio" id="Straight" name="pant_fit" value="Straight">
-                        <label for="Straight">Straight</label><br>
-    
+                    productsDiv.insertAdjacentHTML('beforeend', `
+                    <div class="selector border-2 border-gray-100 p-8">
+                    <form class="quiz text-center text-black">
+
+                    <p class="text-black text-xl p-4">What is your favorite pant fit?</p>
+
+                    <div class="quizImages flex center">
+                        
                         <input type="radio" id="Slim" name="pant_fit" value="Slim">
-                        <label for="Slim">Slim</label><br>
-    
+                        <label class="quizOptionFit" for="Slim">
+                        <img src="images/slim.jpg"></img>
+                        Slim</label>
+
                         <input type="radio" id="Skinny" name="pant_fit" value="Skinny">
-                        <label for="Skinny">Skinny</label><br>
-    
-                        <button class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-xl">Submit</button>
+                        <label class="quizOptionFit" for="Skinny">
+                        <img src="images/skinny.jpg"></img>
+                        Skinny</label>
+
+                        <input type="radio" id="Straight" name="pant_fit" value="Straight">
+                        <label class="quizOptionFit"for="Straight">
+                        <img src="images/straight.jpg"></img>
+                        Straight</label>
+
+                    </div>
+
+                    <button class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 mt-8 rounded-xl">Submit</button>
+                
                     </form>
+                    
+
                     </div>
                     `)
+
+                    // <div class="border-2 border-white m-8">
+                    // <form class="quiz text-center text-black justify-center">
+                    
+                    //     <p class="text-black">What is your preferred pant fit?</p>
+    
+                    //     <input type="radio" id="Straight" name="pant_fit" value="Straight">
+                    //     <label for="Straight">Straight</label><br>
+    
+                    //     <input type="radio" id="Slim" name="pant_fit" value="Slim">
+                    //     <label for="Slim">Slim</label><br>
+    
+                    //     <input type="radio" id="Skinny" name="pant_fit" value="Skinny">
+                    //     <label for="Skinny">Skinny</label><br>
+    
+                    //     <button class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-xl">Submit</button>
+                    // </form>
 
                     document.querySelector('.quiz').addEventListener('submit', async function(event){
 
@@ -379,43 +440,59 @@ firebase.auth().onAuthStateChanged(async function(user)
             if(category == 'denim')
             {
                 productsDiv.insertAdjacentHTML('beforeend', `
-                <div class="border-2 border-white m-8">
-                <form class="quiz text-center text-black">
-                
-                    <p class="text-black">What is your favorite ${category} brand?</p>
+                <div class="selector border-2 border-gray-100 p-8">
+                    <form class="quiz text-center text-black">
 
-                    <input type="radio" id="levi's" name="denim" value="Levi's">
-                    <label for="Levi's">Levi's</label><br>
+                    <p class="text-black text-xl p-4">What is your favorite ${category} brand?</p>
 
-                    <input type="radio" id="Gap" name="denim" value="Gap">
-                    <label for="Gap">Gap</label><br>
+                    <div class="quizImages flex">
+                        
+                        <input type="radio" id="Levi's" name="denim" value="Levi's"/>
+                        <label class="quizOption" for="Levi's">
+                        <img src="images/levis.png"></img>
+                        </label>
 
-                    <input type="radio" id="American Eagle" name="denim" value="American Eagle">
-                    <label for="American Eagle">American Eagle</label><br>
+                        <input type="radio" id="Gap" name="denim" value="Gap">
+                        <label class="quizOption" for="Gap">
+                        <img src="images/gap.png"></img>
+                        </label>
 
-                    <input type="radio" id="Banana Republic" name="denim" value="Banana Republic">
-                    <label for="Banana Republic">Banana Republic</label><br>
+                        <input type="radio" id="American Eagle" name="denim" value="American Eagle">
+                        <label class="quizOption" for="American Eagle">
+                        <img src="images/american_eagle.png"></img>
+                        </label>
 
-                    <input type="radio" id="Mugsy Jeans" name="denim" value="Mugsy Jeans">
-                    <label for="Mugsy Jeans">Mugsy Jeans</label><br>
+                        <input type="radio" id="Banana Republic" name="denim" value="Banana Republic">
+                        <label class="quizOption" for="Banana Republic">
+                        <img src="images/banana_republic.jpg"></img>
+                        </label>
 
-                    <input type="radio" id="Paige" name="denim" value="Paige">
-                    <label for="Paige">Paige</label><br>
+                        <input type="radio" id="Mugsy Jeans" name="denim" value="Mugsy Jeans">
+                        <label class="quizOption" for="Mugsy Jeans">
+                        <img src="images/mugsy.jpg"></img>
+                        </label>
 
-                    <button class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-xl">Submit</button>
+                        <input type="radio" id="Paige" name="denim" value="Paige">
+                        <label class="quizOption" for="Paige">
+                        <img src="images/paige.png"></img>
+                        </label>
+                    </div> 
+
+                    <button class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 mt-8 rounded-xl">Submit</button>
                 </form>
                 </div>
                 `)
             }
             else if(category == 't-shirts')
             {
+                
                 productsDiv.insertAdjacentHTML('beforeend', `
                 <div class="selector border-2 border-gray-100 p-8">
                     <form class="quiz text-center text-black">
 
                     <p class="text-black text-xl p-4">What is your favorite ${category} brand?</p>
 
-                    <div class="quizImages flex"
+                    <div class="quizImages flex">
                         
                         <input type="radio" id="Buck Mason" name="t-shirts" value="Buck Mason"/>
                         <label class="quizOption" for="Buck Mason">
@@ -436,8 +513,8 @@ firebase.auth().onAuthStateChanged(async function(user)
                         <label class="quizOption" for="Bylt Basics">
                         <img src="images/bylt.jpg"></img>
                         </label>
-
-
+               
+                
                     </div>
 
                     <button class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 mt-8 rounded-xl">Submit</button>
@@ -447,10 +524,6 @@ firebase.auth().onAuthStateChanged(async function(user)
                 </div>
                 `)
             }
-                    // <img src="images/buck_mason.jpg"></img>
-                    // <img src="images/everlane.jpg"></img>
-                    // <img src="images/gap.png"></img>
-                    // <img src="images/bylt.jpg"></img>
 
                     // <p class="text-black text-xl p-4">What is your favorite ${category} brand?</p>
 
@@ -476,7 +549,7 @@ firebase.auth().onAuthStateChanged(async function(user)
                         
                         <p class="text-black text-xl p-4">What is your favorite ${category} brand?</p>
                         
-                        <div class="quizImages flex"
+                        <div class="quizImages flex">
                             <input type="radio" id="allbirds" name="sneakers" value="allbirds">
                             <label class="quizOption" for="allbirds">
                             <img src="images/allbirds.jpg"></img>
@@ -521,20 +594,26 @@ firebase.auth().onAuthStateChanged(async function(user)
             else
             {
                 productsDiv.insertAdjacentHTML('beforeend', `
-                <div class="border-2 border-white m-8">
-                <form class="quiz text-center text-black">
-                
-                    <p class="text-black">What is your preferred pant fit?</p>
+                <div class="selector border-2 border-gray-100 p-8">
+                    <form class="quiz text-center text-black">
+
+                    <p class="text-black text-xl p-4">What is your favorite pant fit?</p>
+
+                    <div class="quizImages flex">
+                        
                     <input type="radio" id="Slim" name="pant_fit" value="Slim">
-                    <label for="Slim">Slim</label><br>
+                    <label for="Slim">Slim</label>
 
                     <input type="radio" id="Skinny" name="pant_fit" value="Skinny">
-                    <label for="Skinny">Skinny</label><br>
+                    <label for="Skinny">Skinny</label>
 
                     <input type="radio" id="Straight" name="pant_fit" value="Straight">
-                    <label for="Straight">Straight</label><br>
+                    <label for="Straight">Straight</label>
 
-                    <button class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-xl">Submit</button>
+                </div>
+
+                <button class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 mt-8 rounded-xl">Submit</button>
+                
                 </form>
                 </div>
                 `)
