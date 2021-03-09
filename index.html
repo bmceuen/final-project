@@ -8,6 +8,7 @@
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet" type="text/css">
     <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.7.3/firebase-ui-auth.css" />
     <style>
+      
         .bg-storm
         {
             background-color: #294f6b;
@@ -30,9 +31,29 @@
             font-family: Montserrat;
             src: url(fonts/Montserrat-Regular.ttf)
         }
+
+        @font-face
+        {
+            font-family: Montserrat;
+            src: url(fonts\Montserrat-Bold.ttf);
+            font-weight: bold;
+
+        }
+
         .minimum-height
         {
             min-height: 400px;
+        }
+
+        .Montserrat
+        {
+          font-family: Montserrat;
+        }
+
+        .Montserrat-bold
+        {
+          font-family: Montserrat;
+          font-weight: bold;
         }
 
         .product-grid {
@@ -48,7 +69,7 @@
 
         .product-grid .buynow {
           position: absolute;
-          top: 35%;
+          top: 33%;
           left: 50%;
           transform: translate(-50%, -50%);
           -ms-transform: translate(-50%, -50%);
@@ -60,12 +81,13 @@
           border: none;
           cursor: pointer;
           border-radius: 5px;
+          font-family: Montserrat;
         }
 
         .product-grid .btn {
           position: absolute;
           top: 45%;
-          left: 40%;
+          left: 39%;
           transform: translate(-50%, -50%);
           -ms-transform: translate(-50%, -50%);
           background-color: #294F6B;
@@ -74,13 +96,13 @@
           padding: 12px 16px;
           border: none;
           cursor: pointer;
-          border-radius: 5px;
+          border-radius: 55px;
         }
 
         .product-grid .btn2 {
           position: absolute;
           top: 45%;
-          left: 60%;
+          left: 61%;
           transform: translate(-50%, -50%);
           -ms-transform: translate(-50%, -50%);
           background-color: #294F6B;
@@ -89,15 +111,15 @@
           padding: 12px 16px;
           border: none;
           cursor: pointer;
-          border-radius: 5px;
+          border-radius: 55px;
         }
 
         .product-grid .btn:hover {
-          background-color: black;
+          background-color: #ACB8C7;
         }
                 
         .product-grid .btn2:hover {
-          background-color: black;
+          background-color: #ACB8C7;
         }
           
         .product-grid .buynow:hover {
@@ -109,7 +131,7 @@
           margin: 0;
           padding: 0;
           /* width: 200px; */
-          background-color: #f1f1f1;
+          background-color: #FFF;
           position: absolute;
           /* height: 100%; */
           overflow: auto;
@@ -131,7 +153,7 @@
 
         /* Links on mouse-over */
         .sidebar a:hover:not(.active) {
-          background-color: #555;
+          background-color: #294F6B;
           color: white;
         }
 
@@ -160,63 +182,109 @@
             float: none;
           }
         }
+
+        
+          .selector input{
+              margin:0;padding:0;
+              -webkit-appearance:none;
+                -moz-appearance:none;
+                      appearance:none;
+          }
+
+          .radio {
+              opacity: 0;
+              position: absolute;
+          }
+
+          .quizOption{
+            /* background-image: url(https://twitter.com/Gap/photo); */
+            /* text-indent: -999em;  */
+            border: 10px solid white;
+            width: 126px;
+            height: 126px;
+            /* display: block; */
+            /* float: right; */
+            /* margin: 10px; */
+            }
+          
+          input[type="radio"]:checked + label{
+          border: 10px solid #D0A363;
+          }
     </style>
 </head>
 <body class="bg-white">
+
+  
 <!-- <div class="flex md:flex-row-reverse flex-wrap"></div> -->
     <div class="banner bg-storm md:flex space-x-2 md:space-y-0 space-y-2">
-        <div class="logo text-white text-4xl md:w-1/5">Insert Logo Here</div>
+        <div class="logo text-white text-4xl md:w-1/5">
+          <img src="C:\code\final-project\images\OnBrand2b.png"></div>
     </div>
 
-    <div class="top-menu bg-gray-100 md:flex">
+    <div class="top-menu md:flex">
     </div>
 
     <div class="sign-in-or-sign-out md:w-full"></div>
 
-    <div class="sidebar md:w-1/5 md:h-screen text-center">
-        <div class="userinfo p-4 break-words"></div>
+    <div class="sidebar md:w-1/5 md:h-screen text-center bg-white">
+        <div class="userinfo p-4 break-words Montserrat"></div>
+        <div class="filters hidden Montserrat">
+          <form>
+            <label for="cars">Choose a car:</label>
+            <select name="cars" id="cars">
+              <option value="volvo">Volvo</option>
+              <option value="saab">Saab</option>
+              <option value="opel">Opel</option>
+              <option value="audi">Audi</option>
+            </select>
+            <br><br>
+            <input type="submit" value="Submit">
+          </form>
+          
+
+        </div>
           <ul>
-            <li>
+            <!-- <li>
                 <a href="#">
                   <img src="C:\code\final-project\images\accesories.png" class="h-6">
                 </a>
-            </li>
+            </li> -->
             <li>
               <a href="#">
-                <img src="C:\code\final-project\images\athleticshoes.png" class="h-6">
+                <img src="C:\code\final-project\images\athleticshoes.png" class="sneakers h-6">
               </a>
             </li>
-            <li>
+            <!-- <li>
               <a href="#">
-                <img src="C:\code\final-project\images\baseballcap.png" class="h-6">
-              </a>
+                <img src="C:\code\final-project-1\images\baseballcap.png" class="h-6">
+              </a> -->
             </li>
-            <li>
+            <!-- <li>
               <a href="#">
                 <img src="C:\code\final-project\images\buttonup.png" class="h-6">
               </a>
-            </li>
+            </li> -->
             <li>
               <a href="#">
-                <img src="C:\code\final-project\images\denim.png" class="h-6">
+                <img src="C:\code\final-project\images\denim.png" class="denim h-6">
               </a>
             </li>
-            <li>
+            <!-- <li>
               <a href="#">
                 <img src="C:\code\final-project\images\dressshoes.png" class="h-6">
               </a>
-            </li>
-            <li>
+            </li> -->
+            <!-- <li>
               <a href="#">
                 <img src="C:\code\final-project\images\outerwear.png" class="h-6">
               </a>
-            </li>
-            <li>
+            </li> -->
+            <!-- <li>
               <a href="#">
                 <img src="C:\code\final-project\images\pants.png" class="h-6">
               </a>
-            </li>
-            <li>
+            </li> -->
+            <!-- <li>
               <a href="#">
                 <img src="C:\code\final-project\images\shorts.png" class="h-6">
               </a>
@@ -225,22 +293,22 @@
               <a href="#">
                 <img src="C:\code\final-project\images\suits.png" class="h-6">
               </a>
-            </li>
+            </li> -->
             <li>
               <a href="#">
-                <img src="C:\code\final-project\images\tshirt.png" class="h-6">
+                <img src="C:\code\final-project\images\tshirt.png" class="t-shirts h-6">
               </a>
             </li>
-            <li>
+            <!-- <li>
               <a href="#">
                 <img src="C:\code\final-project\images\underwear.png" class="h-6">
               </a>
-            </li>
-            <li>
+            </li> -->
+            <!-- <li>
               <a href="#">
                 <img src="C:\code\final-project\images\workoutgear.png" class="h-6">
               </a>
-            </li>
+            </li> -->
         </ul>
 
 
@@ -302,7 +370,7 @@
 
     </div>
 
-    <div class="category-title text-storm text-center text-3xl md:w-4/5 pt-4 pl-16 pr-16 ml-8 md:border-b-4 md:border-tan md:float-right md:flex md:flex-wrap">
+    <div class="category-title Montserrat text-storm text-center text-5xl md:w-4/5 pt-4 pl-16 pr-16 ml-8 md:border-b-4 md:border-tan md:float-right md:flex md:flex-wrap">
     </div>
 
     <div class="products md:w-4/5 md:float-right pt-4 pl-16 pr-16 pb-16 ml-8 md:flex md:flex-wrap">
