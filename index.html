@@ -182,6 +182,44 @@
             float: none;
           }
         }
+    .selector input{
+              margin:0;padding:0;
+              -webkit-appearance:none;
+                -moz-appearance:none;
+                      appearance:none;
+          }
+
+          .radio {
+              opacity: 0;
+              position: absolute;
+          }
+
+          .quizOption{
+            /* background-image: url(https://twitter.com/Gap/photo); */
+            /* text-indent: -999em;  */
+            border: 10px solid white;
+            width: 126px;
+            height: 126px;
+            /* display: block; */
+            /* float: right; */
+            /* margin: 10px; */
+            }
+
+          .quizOptionFit{
+            /* background-image: url(https://twitter.com/Gap/photo); */
+            /* text-indent: -999em;  */
+            border: 10px solid white;
+            width: 385px;
+            height: 513px;
+            /* display: block; */
+            /* float: right; */
+            margin: 10px;
+            }
+          
+          input[type="radio"]:checked + label{
+          border: 10px solid #D0A363;
+          }
+
     </style>
 </head>
 <body class="bg-white">
@@ -190,7 +228,9 @@
 <!-- <div class="flex md:flex-row-reverse flex-wrap"></div> -->
     <div class="banner bg-storm md:flex space-x-2 md:space-y-0 space-y-2">
         <div class="logo text-white text-4xl md:w-1/5">
-          <img src="C:\code\final-project-1\images\OnBrand2b.png"></div>
+
+          <img src="images\OnBrand2b.png"></div>
+
     </div>
 
     <div class="top-menu md:flex">
@@ -218,129 +258,189 @@
           <ul>
             <!-- <li>
                 <a href="#">
-                  <img src="C:\code\final-project\images\accesories.png" class="h-6">
+
+                  <img src="images\accesories.png" class="h-6">
                 </a>
             </li> -->
             <li>
               <a href="#">
-                <img src="C:\code\final-project\images\athleticshoes.png" class="sneakers h-6">
+                <img src="images\athleticshoes.png" class="sneakers h-6">
+
               </a>
             </li>
-            <!-- <li>
-              <a href="#">
-                <img src="C:\code\final-project-1\images\baseballcap.png" class="h-6">
-              </a> -->
-            </li>
-            <!-- <li>
-              <a href="#">
-                <img src="C:\code\final-project\images\buttonup.png" class="h-6">
+         
+            <li>
+
+                <img src="images\denim.png" class="denim h-6">
+
               </a>
-            </li> -->
+            </li>
+           
+            </li>
+       
             <li>
               <a href="#">
-                <img src="C:\code\final-project\images\denim.png" class="denim h-6">
+
+                <img src="images\tshirt.png" class="t-shirts h-6">
+
               </a>
             </li>
-            <!-- <li>
-              <a href="#">
-                <img src="C:\code\final-project\images\dressshoes.png" class="h-6">
-              </a>
-            </li> -->
-            <!-- <li>
-              <a href="#">
-                <img src="C:\code\final-project\images\outerwear.png" class="h-6">
-              </a>
-            </li> -->
-            <!-- <li>
-              <a href="#">
-                <img src="C:\code\final-project\images\pants.png" class="h-6">
-              </a>
-            </li> -->
-            <!-- <li>
-              <a href="#">
-                <img src="C:\code\final-project\images\shorts.png" class="h-6">
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <img src="C:\code\final-project\images\suits.png" class="h-6">
-              </a>
-            </li> -->
-            <li>
-              <a href="#">
-                <img src="C:\code\final-project\images\tshirt.png" class="t-shirts h-6">
-              </a>
-            </li>
-            <!-- <li>
-              <a href="#">
-                <img src="C:\code\final-project\images\underwear.png" class="h-6">
-              </a>
-            </li> -->
-            <!-- <li>
-              <a href="#">
-                <img src="C:\code\final-project\images\workoutgear.png" class="h-6">
-              </a>
-            </li> -->
+      
         </ul>
 
 
-        <!-- <div class="sidemenu p-2">
+       
 
           <a href="#">
-            <img src="C:\code\final-project\images\accesories.png" class="h-6">
+            <img src="images\buttonup.png" class="h-6">
           </a>
 
           <a href="#">
-            <img src="C:\code\final-project\images\athleticshoes.png" class="h-6">
+            <img src="images\denim.png" class="h-6">
           </a>
 
           <a href="#">
-            <img src="C:\code\final-project\images\baseballcap.png" class="h-6">
+            <img src="images\dressshoes.png" class="h-6">
           </a>
 
           <a href="#">
-            <img src="C:\code\final-project\images\buttonup.png" class="h-6">
-          </a>
-
-          <a href="#">
-            <img src="C:\code\final-project\images\denim.png" class="h-6">
-          </a>
-
-          <a href="#">
-            <img src="C:\code\final-project\images\dressshoes.png" class="h-6">
-          </a>
-
-          <a href="#">
-            <img src="C:\code\final-project\images\outerwear.png" class="h-6">
+            <img src="images\outerwear.png" class="h-6">
           </a>
  
           <a href="#">
-            <img src="C:\code\final-project\images\pants.png" class="h-6">
+            <img src="images\pants.png" class="h-6">
           </a>
 
           <a href="#">
-            <img src="C:\code\final-project\images\shorts.png" class="h-6">
+            <img src="images\shorts.png" class="h-6">
           </a>
 
           <a href="#">
-            <img src="C:\code\final-project\images\suits.png" class="h-6">
+            <img src="images\suits.png" class="h-6">
           </a>
 
           <a href="#">
-            <img src="C:\code\final-project\images\tshirt.png" class="h-6">
+            <img src="images\tshirt.png" class="h-6">
           </a>
 
           <a href="#">
-            <img src="C:\code\final-project\images\underwear.png" class="h-6">
+            <img src="images\underwear.png" class="h-6">
           </a>
 
           <a href="#">
-            <img src="C:\code\final-project\images\workoutgear.png" class="h-6">
+            <img src="images\workoutgear.png" class="h-6">
           </a>
 
         </div> -->
 
     </div>
+
+    <div class="category-title Montserrat text-storm text-center text-5xl md:w-4/5 pt-4 pl-16 pr-16 ml-8 md:border-b-4 md:border-tan md:float-right md:flex md:flex-wrap">
+    </div>
+
+    <div class="products md:w-4/5 md:float-right pt-4 pl-16 pr-16 pb-16 ml-8 md:flex md:flex-wrap">
+    </div>
+   
+    <div class="quiz">        
+    </div>
+    
+    <!-- <div class="sidebar md:w-1/5 bg-gray-100 relative px-2 text-center bottom-0 md:pt-8 md:top-0 md:left-0 md:h-screen md:border-r-4 md:border-gray-600">
+        <div class="md:relative mx-auto lg:float-right lg:px-6">
+           <div class="user-details block py-1 mr-3 md:py-3 pl-1 align-middle text-gray-800 no-underline"></div>
+           <ul class="list-reset flex flex-row md:flex-col text-center md:text-left">
+              <li class="mr-3 flex-1">
+                 <a href="#" class="block py-1 md:py-3 pl-1 align-middle text-gray-800 no-underline hover:text-pink-500 border-b-2 border-gray-800 md:border-gray-900 hover:border-pink-500">
+                 <i class="fas fa-link pr-0 md:pr-3"></i><span class="pb-1 md:pb-0 text-xs md:text-base text-gray-600 md:text-gray-400 block md:inline-block">Link</span>
+                 </a>
+              </li>
+              <li class="mr-3 flex-1">
+                 <a href="#" class="block py-1 md:py-3 pl-1 align-middle text-gray-800 no-underline hover:text-pink-500 border-b-2 border-gray-800 md:border-gray-900 hover:border-pink-500">
+                 <i class="fas fa-link pr-0 md:pr-3"></i><span class="pb-1 md:pb-0 text-xs md:text-base text-gray-600 md:text-gray-400 block md:inline-block">Link</span>
+                 </a>
+              </li>
+              <li class="mr-3 flex-1">
+                 <a href="#" class="block py-1 md:py-3 pl-1 align-middle text-white no-underline hover:text-white border-b-2 border-pink-600">
+                 <i class="fas fa-link pr-0 md:pr-3 text-pink-500"></i><span class="pb-1 md:pb-0 text-xs md:text-base text-white md:font-bold block md:inline-block">Active Link</span>
+                 </a>
+              </li>
+              <li class="mr-3 flex-1">
+                 <a href="#" class="block py-1 md:py-3 pl-1 align-middle text-gray-800 no-underline hover:text-pink-500 border-b-2 border-gray-800 md:border-gray-900 hover:border-pink-500">
+                 <i class="fas fa-link pr-0 md:pr-3"></i><span class="pb-1 md:pb-0 text-xs md:text-base text-gray-600 md:text-gray-400 block md:inline-block">Link</span>
+                 </a>
+              </li>
+           </ul>
+        </div>
+     </div> -->    
+
+<!-- 
+</div> -->
+
+            <!-- <li>
+                <a href="#">
+                  <img src="C:\code\final-project\images\accesories.png">
+                </a>
+            </li>
+            <li>
+              <a href="#">
+                <img src="C:\code\final-project\images\athleticshoes.png">
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img src="C:\code\final-project\images\baseballcap.png">
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img src="C:\code\final-project\images\buttonup.png">
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img src="C:\code\final-project\images\denim.png" class="object-scale-down">
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img src="C:\code\final-project\images\dressshoes.png">
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img src="C:\code\final-project\images\outerwear.png">
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img src="C:\code\final-project\images\pants.png">
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img src="C:\code\final-project\images\shorts.png">
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img src="C:\code\final-project\images\suits.png">
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img src="C:\code\final-project\images\tshirt.png">
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img src="C:\code\final-project\images\underwear.png">
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img src="C:\code\final-project\images\workoutgear.png">
+              </a>
+            </li>
+        </ul> -->
 
     <div class="category-title Montserrat text-storm text-center text-5xl md:w-4/5 pt-4 pl-16 pr-16 ml-8 md:border-b-4 md:border-tan md:float-right md:flex md:flex-wrap">
     </div>
