@@ -237,7 +237,7 @@ firebase.auth().onAuthStateChanged(async function(user)
                     // <div class="product-grid">
                 document.querySelector('.products').insertAdjacentHTML('beforeend', `
 
-                <div class=" product-grid product-${productID} p-4 lg:w-1/4">
+                <div class=" product-grid product-${productID} p-4 md:w-1/4">
                     <div class = "productImgContainer">
                         <a href="${productURL}" target="popup" onclick="window.open('${productURL}','name','width=1400, height=1000')">
                             <img src="${productImage}" class="product-image border-2 border-black">
