@@ -57,6 +57,7 @@ firebase.auth().onAuthStateChanged(async function(user)
         let productsDiv = document.querySelector('.products')
         let sideNavDiv = document.querySelector('.sidebar')
 
+
         // function for quiz form
         // function renderQuiz(brandsArray){
             // productsDiv.insertAdjacentHTML('beforeend', `
@@ -288,6 +289,7 @@ firebase.auth().onAuthStateChanged(async function(user)
             let answers = findAnswers.docs
             
 
+
             for (let j = 0;j<answers.length;j++)
             {
                 let answer = answers[j].data()
@@ -298,6 +300,7 @@ firebase.auth().onAuthStateChanged(async function(user)
             let productList = await db.collection('products').where('brand', '==', answer.answer)
                                                             .where('category', '==', answer.category)                                            
                                                             .get()
+
 
             
             
@@ -482,6 +485,7 @@ firebase.auth().onAuthStateChanged(async function(user)
                     </div> 
 
                     <button class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 mt-8 rounded-xl">Submit</button>
+                
                 </form>
                 </div>
                 `)
@@ -544,9 +548,12 @@ firebase.auth().onAuthStateChanged(async function(user)
 
                     // <button class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 mt-8 rounded-xl">Submit</button>
 
+
+
             else if(category == 'sneakers')
             {
                 productsDiv.insertAdjacentHTML('beforeend', `
+
                 <div class="selector border-2 border-gray-100 p-8">
                     <form class="quiz text-center text-black">                        
                         
@@ -594,9 +601,11 @@ firebase.auth().onAuthStateChanged(async function(user)
         // <button class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-xl">Submit</button>
                         
 
+
             else
             {
                 productsDiv.insertAdjacentHTML('beforeend', `
+
                 <div class="selector border-2 border-gray-100 p-8">
                     <form class="quiz text-center text-black">
 
@@ -613,7 +622,7 @@ firebase.auth().onAuthStateChanged(async function(user)
                     <input type="radio" id="Straight" name="pant_fit" value="Straight">
                     <label for="Straight">Straight</label>
 
-                </div>
+                
 
                 <button class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 mt-8 rounded-xl">Submit</button>
                 
@@ -621,7 +630,7 @@ firebase.auth().onAuthStateChanged(async function(user)
                 </div>
                 `)
             }
-          
+         
         document.querySelector('.quiz').addEventListener('submit', async function(event){
 
             event.preventDefault()
