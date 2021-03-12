@@ -100,9 +100,9 @@ firebase.auth().onAuthStateChanged(async function(user)
         }
 
         //THIS SHOWS USER INFO
-        document.querySelector('.userinfo').insertAdjacentHTML('beforeend',
-        `Hello ${user.displayName}! <br>
-        <button class="sign-out-button Montserrat-bold bg-tan text-bold text-storm px-4 py-2 rounded-xl">Sign-Out</button>`
+        document.querySelector('.userinfo').insertAdjacentHTML('beforeend', `
+        <div class="text-storm text-2xl text-bold uppercase"> ${user.displayName}'s Closet</div> <br>
+        <button class="sign-out-button bg-tan text-storm px-4 py-2 rounded-xl">Sign-Out</button>`
         )
 
         //THIS SHOWS FILTERS
@@ -319,7 +319,7 @@ firebase.auth().onAuthStateChanged(async function(user)
                     let productID = productData.product_number
                 
                 document.querySelector('.products').insertAdjacentHTML('beforeend', `
-                <div class=" product-grid product-${productID} p-4 lg:w-1/4">
+                <div class=" product-grid product-${productID} p-4 md:w-1/4">
                     <div class = "productImgContainer">
                         <a href="${productURL}" target="popup" onclick="window.open('${productURL}','name','width=1400, height=1000')">
                             <img src="${productImage}" class="product-image border-2 border-black">
