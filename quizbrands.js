@@ -24,4 +24,4 @@ let tShirtData = [{
 }
 ]
 
-// why does this not work? update "brand" without quotes
+// why does this not work?

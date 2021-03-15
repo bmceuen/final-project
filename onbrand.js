@@ -235,25 +235,25 @@ firebase.auth().onAuthStateChanged(async function(user)
                     let brand = productData.brand
                     let productID = productData.product_number
                     // <div class="product-grid">
-                document.querySelector('.products').insertAdjacentHTML('beforeend', `
+                    document.querySelector('.products').insertAdjacentHTML('beforeend', `
 
-                <div class=" product-grid product-${productID} p-4 md:w-1/4">
-                    <div class = "productImgContainer">
-                        <a href="${productURL}" target="popup" onclick="window.open('${productURL}','name','width=1400, height=1000')">
-                            <img src="${productImage}" class="product-image border-2 border-black">
-                        </a>
-                                <button class="buynow hidden">BUY NOW</button>
-                                <button class="btn hidden">👍</button>
-                                <button class="btn2 hidden">👎</button>
-                    </div>
-                    <div class="mt-2 justify-center">
-
-                        <p class="text-center text-2xl text-bold text-black">${brand}</p>
-                    </div>
-                    <div class="text-black text-center text-l text-bold">${productName}</div>
-                    <div class="text-black text-center text-xl text-bold">${productPrice}</div>
-                </div>                
-                `)
+                    <div class="product-grid product-${productID} p-4 md:w-1/4">
+                        <div class = "productImgContainer">
+                            <a href="${productURL}" target="popup" onclick="window.open('${productURL}','name','width=1400, height=1000')">
+                                <img src="${productImage}" class="product-image border-2 border-black">
+                            </a>
+                                    <button class="buynow hidden">BUY NOW</button>
+                                    <button class="btn hidden">👍</button>
+                                    <button class="btn2 hidden">👎</button>
+                        </div>
+                        <div class="mt-2 justify-center">
+    
+                            <p class="text-center text-2xl text-bold text-black">${brand}</p>
+                        </div>
+                        <div class="text-black text-center text-l text-bold">${productName}</div>
+                        <div class="text-black text-center text-xl text-bold">${productPrice}</div>
+                    </div>                
+                    `)
             document.querySelector(`.product-${productID}`).addEventListener('mouseover', function (event)
                     {
                         event.preventDefault()
@@ -317,25 +317,26 @@ firebase.auth().onAuthStateChanged(async function(user)
                     let productPrice = productData.price
                     let brand = productData.brand
                     let productID = productData.product_number
-                
-                document.querySelector('.products').insertAdjacentHTML('beforeend', `
-                <div class=" product-grid product-${productID} p-4 md:w-1/4">
-                    <div class = "productImgContainer">
-                        <a href="${productURL}" target="popup" onclick="window.open('${productURL}','name','width=1400, height=1000')">
-                            <img src="${productImage}" class="product-image border-2 border-black">
-                        </a>
-                                <button class="buynow hidden">BUY NOW</button>
-                                <button class="btn hidden">👍</button>
-                                <button class="btn2 hidden">👎</button>
-                    </div>
-                    <div class="mt-2 justify-center">
+                    // <div class="product-grid">
+                    document.querySelector('.products').insertAdjacentHTML('beforeend', `
 
-                        <p class="text-center text-2xl text-bold text-black">${brand}</p>
-                    </div>
-                    <div class="text-black text-center text-l text-bold">${productName}</div>
-                    <div class="text-black text-center text-xl text-bold">${productPrice}</div>
-                </div> 
-                `)
+                    <div class="product-grid product-${productID} p-4 md:w-1/4">
+                        <div class = "productImgContainer">
+                            <a href="${productURL}" target="popup" onclick="window.open('${productURL}','name','width=1400, height=1000')">
+                                <img src="${productImage}" class="product-image border-2 border-black">
+                            </a>
+                                    <button class="buynow hidden">BUY NOW</button>
+                                    <button class="btn hidden">👍</button>
+                                    <button class="btn2 hidden">👎</button>
+                        </div>
+                        <div class="mt-2 justify-center">
+    
+                            <p class="text-center text-2xl text-bold text-black">${brand}</p>
+                        </div>
+                        <div class="text-black text-center text-l text-bold">${productName}</div>
+                        <div class="text-black text-center text-xl text-bold">${productPrice}</div>
+                    </div>                
+                    `)
             document.querySelector(`.product-${productID}`).addEventListener('mouseover', function (event)
                     {
                         event.preventDefault()
@@ -532,21 +533,6 @@ firebase.auth().onAuthStateChanged(async function(user)
                 `)
             }
 
-                    // <p class="text-black text-xl p-4">What is your favorite ${category} brand?</p>
-
-                    // <input type="radio" id="Buck Mason" name="t-shirts" value="Buck Mason">
-                    // <label for="Buck Mason">Buck Mason</label><br>
-
-                    // <input type="radio" id="Everlane" name="t-shirts" value="Everlane">
-                    // <label for="Everlane">Everlane</label><br>
-
-                    // <input type="radio" id="Gap" name="t-shirts" value="Gap">
-                    // <label for="Gap">Gap</label><br>
-
-                    // <input type="radio" id="Bylt Basics" name="t-shirts" value="Bylt Basics">
-                    // <label for="Bylt Basics">Bylt Basics</label><br>
-
-                    // <button class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 mt-8 rounded-xl">Submit</button>
 
 
 
@@ -705,11 +691,13 @@ firebase.auth().onAuthStateChanged(async function(user)
             printProducts()
             adjustCategory()
         })
+
+        document.querySelector(`.sneakers`).addEventListener('click', async function(event)
+            {
+                console.log('hello')
+            })
     }
-
-
-
-    
+        
 
     else
     {

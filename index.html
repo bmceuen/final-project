@@ -35,7 +35,7 @@
         @font-face
         {
             font-family: Montserrat;
-            src: url(fonts\Montserrat-Bold.ttf);
+            src: url(fonts/Montserrat-Bold.ttf);
             font-weight: bold;
 
         }
@@ -89,12 +89,6 @@
           font-family: Montserrat;
         }
 
-        /* .hidden-buttons {
-          position: absolute;
-          top: 33%;
-          left: 50%;
-        } */
-
         .product-grid .btn {
           position: absolute;
           top: 80%;
@@ -140,7 +134,7 @@
         /* The side navigation menu */
         .sidebar {
           margin: 0;
-          padding: 0; */
+          padding: 0;
           /* width: 200px; */
           background-color: #FFF;
           position: absolute;
@@ -175,7 +169,6 @@
           height: 1000px;
         } */
 
-        /* On screens that are less than 1024px, display the bar vertically, instead of horizontally */
         @media screen and (max-width: 1024px) {
           .sidebar {
             width: 100%;
@@ -188,43 +181,35 @@
             float: none;
           }
         }
-    .selector input{
-              margin:0;padding:0;
-              -webkit-appearance:none;
-                -moz-appearance:none;
-                      appearance:none;
+
+        .selector input{
+            margin:0;padding:0;
+            -webkit-appearance:none;
+              -moz-appearance:none;
+                    appearance:none;
+        }
+
+        .radio {
+            opacity: 0;
+            position: absolute;
+        }
+
+        .quizOption{
+          border: 10px solid white;
+          width: 126px;
+          height: 126px;
           }
 
-          .radio {
-              opacity: 0;
-              position: absolute;
+        .quizOptionFit{
+          border: 10px solid white;
+          width: 385px;
+          height: 513px;
+          margin: 10px;
           }
-
-          .quizOption{
-            /* background-image: url(https://twitter.com/Gap/photo); */
-            /* text-indent: -999em;  */
-            border: 10px solid white;
-            width: 126px;
-            height: 126px;
-            /* display: block; */
-            /* float: right; */
-            /* margin: 10px; */
-            }
-
-          .quizOptionFit{
-            /* background-image: url(https://twitter.com/Gap/photo); */
-            /* text-indent: -999em;  */
-            border: 10px solid white;
-            width: 385px;
-            height: 513px;
-            /* display: block; */
-            /* float: right; */
-            margin: 10px;
-            }
-          
-          input[type="radio"]:checked + label{
-          border: 10px solid #D0A363;
-          }
+        
+        input[type="radio"]:checked + label{
+        border: 10px solid #D0A363;
+        }
 
     </style>
 </head>
@@ -232,145 +217,71 @@
 
   
 <!-- <div class="flex md:flex-row-reverse flex-wrap"></div> -->
+<div class="banner bg-storm space-x-2 md:space-y-0 space-y-2">
+  <div class="logo text-white text-4xl w-1/5">
 
-    <div class="banner bg-storm space-x-2 md:space-y-0 space-y-2">
-        <div class="logo text-white text-4xl w-1/5">
+    <img src="images\OnBrand2b.png"></div>
 
-          <img src="images\OnBrand2b.png"></div>
+</div>
 
-    </div>
+<div class="top-menu md:flex">
+</div>
 
-    <div class="top-menu md:flex">
-    </div>
-
-    <div class="sign-in-or-sign-out md:w-full"></div>
+<div class="sign-in-or-sign-out md:w-full"></div>
 
 
 
 <!-- 
-   <div class="sidebar relative md:w-1/5 md:h-screen md:top-0 md:left-0 text-center bg-white"> -->
-    <div class="sidebar md:w-1/5 md:h-screen text-center bg-white">
-        <div class="userinfo p-4 break-words Montserrat">
-        </div>
-        <div class="filters hidden Montserrat">
-          <form>
-            <label for="cars">Choose a car:</label>
-            <select name="cars" id="cars">
-              <option value="volvo">Volvo</option>
-              <option value="saab">Saab</option>
-              <option value="opel">Opel</option>
-              <option value="audi">Audi</option>
-            </select>
-            <br><br>
-            <input type="submit" value="Submit">
-          </form>          
-        </div>
+<div class="sidebar relative md:w-1/5 md:h-screen md:top-0 md:left-0 text-center bg-white"> -->
+<div class="sidebar md:w-1/5 md:h-screen text-center bg-white">
+  <div class="userinfo p-4 break-words Montserrat">
+  </div>
+  <div class="filters hidden Montserrat">
+    <form>
+      <label for="cars">Choose a car:</label>
+      <select name="cars" id="cars">
+        <option value="volvo">Volvo</option>
+        <option value="saab">Saab</option>
+        <option value="opel">Opel</option>
+        <option value="audi">Audi</option>
+      </select>
+      <br><br>
+      <input type="submit" value="Submit">
+    </form>          
+  </div>
 
-        <ul class="inline-block text-center">
-          <li>
-            <a href="#">
-              <img src="images\athleticshoes.png" class="sneakers h-6">
-            </a>
-          </li>
+  <ul class="inline-block text-center">
+    <li>
+      <a href="#">
+        <img src="images\athleticshoes.png" class="sneakers h-6">
+      </a>
+    </li>
 
-          <li class="center">
-            <a href="#">
-              <img src="images\denim.png" class="denim h-6">
-            </a>
-          </li>
-                    <li>
-            <a href="#">
-              <img src="images\tshirt.png" class="t-shirts h-6">
-            </a>
-          </li>
-        </ul>
-      </div>
+    <li class="center">
+      <a href="#">
+        <img src="images\denim.png" class="denim h-6">
+      </a>
+    </li>
+              <li>
+      <a href="#">
+        <img src="images\tshirt.png" class="t-shirts h-6">
+      </a>
+    </li>
+  </ul>
+</div>
 
 
-    <div class="category-title Montserrat text-storm text-center text-5xl lg:w-4/5 pt-4 lg:pl-16 pr-0 ml-0 border-b-4 border-tan lg:float-right lg:text-left lg:flex lg:flex-wrap">
-    </div>
+<div class="category-title Montserrat text-storm text-center text-5xl lg:w-4/5 pt-4 lg:pl-16 pr-0 ml-0 border-b-4 border-tan lg:float-right lg:text-left lg:flex lg:flex-wrap">
+</div>
 
-    <div class="products lg:w-4/5 lg:float-right pt-4 pl-16 pr-16 pb-16 ml-8 md:flex md:flex-wrap">
-    </div>
+<div class="products lg:w-4/5 lg:float-right pt-4 pl-16 pr-16 pb-16 ml-8 md:flex md:flex-wrap">
+</div>
 
- 
-    <div class="quiz">        
-    </div>
+
+<div class="quiz">        
+</div>
     
-    <!-- <div class="sidebar md:w-1/5 bg-gray-100 relative px-2 text-center bottom-0 md:pt-8 md:top-0 md:left-0 md:h-screen md:border-r-4 md:border-gray-600">
-        <div class="md:relative mx-auto lg:float-right lg:px-6">
-           <div class="user-details block py-1 mr-3 md:py-3 pl-1 align-middle text-gray-800 no-underline"></div>
-           <ul class="list-reset flex flex-row md:flex-col text-center md:text-left">
-              <li class="mr-3 flex-1">
-                 <a href="#" class="block py-1 md:py-3 pl-1 align-middle text-gray-800 no-underline hover:text-pink-500 border-b-2 border-gray-800 md:border-gray-900 hover:border-pink-500">
-                 <i class="fas fa-link pr-0 md:pr-3"></i><span class="pb-1 md:pb-0 text-xs md:text-base text-gray-600 md:text-gray-400 block md:inline-block">Link</span>
-                 </a>
-              </li>
-              <li class="mr-3 flex-1">
-                 <a href="#" class="block py-1 md:py-3 pl-1 align-middle text-gray-800 no-underline hover:text-pink-500 border-b-2 border-gray-800 md:border-gray-900 hover:border-pink-500">
-                 <i class="fas fa-link pr-0 md:pr-3"></i><span class="pb-1 md:pb-0 text-xs md:text-base text-gray-600 md:text-gray-400 block md:inline-block">Link</span>
-                 </a>
-              </li>
-              <li class="mr-3 flex-1">
-                 <a href="#" class="block py-1 md:py-3 pl-1 align-middle text-white no-underline hover:text-white border-b-2 border-pink-600">
-                 <i class="fas fa-link pr-0 md:pr-3 text-pink-500"></i><span class="pb-1 md:pb-0 text-xs md:text-base text-white md:font-bold block md:inline-block">Active Link</span>
-                 </a>
-              </li>
-              <li class="mr-3 flex-1">
-                 <a href="#" class="block py-1 md:py-3 pl-1 align-middle text-gray-800 no-underline hover:text-pink-500 border-b-2 border-gray-800 md:border-gray-900 hover:border-pink-500">
-                 <i class="fas fa-link pr-0 md:pr-3"></i><span class="pb-1 md:pb-0 text-xs md:text-base text-gray-600 md:text-gray-400 block md:inline-block">Link</span>
-                 </a>
-              </li>
-           </ul>
-        </div>
-     </div> -->    
-
-<!-- 
-</div> -->
-
-
-    <!-- <div class="category-title Montserrat text-storm text-center text-5xl md:w-4/5 pt-4 pl-16 pr-16 ml-8 md:border-b-4 md:border-tan md:float-right md:flex md:flex-wrap">
-    </div>
-
-    <div class="products md:w-4/5 md:float-right pt-4 pl-16 pr-16 pb-16 ml-8 md:flex md:flex-wrap">
-    </div>
-   
-    <div class="quiz">        
-    </div> -->
-    
-    <!-- <div class="sidebar md:w-1/5 bg-gray-100 relative px-2 text-center bottom-0 md:pt-8 md:top-0 md:left-0 md:h-screen md:border-r-4 md:border-gray-600">
-        <div class="md:relative mx-auto lg:float-right lg:px-6">
-           <div class="user-details block py-1 mr-3 md:py-3 pl-1 align-middle text-gray-800 no-underline"></div>
-           <ul class="list-reset flex flex-row md:flex-col text-center md:text-left">
-              <li class="mr-3 flex-1">
-                 <a href="#" class="block py-1 md:py-3 pl-1 align-middle text-gray-800 no-underline hover:text-pink-500 border-b-2 border-gray-800 md:border-gray-900 hover:border-pink-500">
-                 <i class="fas fa-link pr-0 md:pr-3"></i><span class="pb-1 md:pb-0 text-xs md:text-base text-gray-600 md:text-gray-400 block md:inline-block">Link</span>
-                 </a>
-              </li>
-              <li class="mr-3 flex-1">
-                 <a href="#" class="block py-1 md:py-3 pl-1 align-middle text-gray-800 no-underline hover:text-pink-500 border-b-2 border-gray-800 md:border-gray-900 hover:border-pink-500">
-                 <i class="fas fa-link pr-0 md:pr-3"></i><span class="pb-1 md:pb-0 text-xs md:text-base text-gray-600 md:text-gray-400 block md:inline-block">Link</span>
-                 </a>
-              </li>
-              <li class="mr-3 flex-1">
-                 <a href="#" class="block py-1 md:py-3 pl-1 align-middle text-white no-underline hover:text-white border-b-2 border-pink-600">
-                 <i class="fas fa-link pr-0 md:pr-3 text-pink-500"></i><span class="pb-1 md:pb-0 text-xs md:text-base text-white md:font-bold block md:inline-block">Active Link</span>
-                 </a>
-              </li>
-              <li class="mr-3 flex-1">
-                 <a href="#" class="block py-1 md:py-3 pl-1 align-middle text-gray-800 no-underline hover:text-pink-500 border-b-2 border-gray-800 md:border-gray-900 hover:border-pink-500">
-                 <i class="fas fa-link pr-0 md:pr-3"></i><span class="pb-1 md:pb-0 text-xs md:text-base text-gray-600 md:text-gray-400 block md:inline-block">Link</span>
-                 </a>
-              </li>
-           </ul>
-        </div>
-     </div> -->    
-
-<!-- 
-</div> -->
-
-
-    <!-- The core Firebase JS SDK is always required and must be listed first -->
+<!-- The core Firebase JS SDK is always required and must be listed first -->
 <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
 
 <!-- TODO: Add SDKs for Firebase products that you want to use
@@ -381,12 +292,12 @@
 <script>
   // Your web app's Firebase configuration
   var firebaseConfig = {
-    apiKey: "AIzaSyBIx_DcVZ6kI7MJcTU3kOKjwCMobuJd9UE",
-    authDomain: "kiei-451-bbb08.firebaseapp.com",
-    projectId: "kiei-451-bbb08",
-    storageBucket: "kiei-451-bbb08.appspot.com",
-    messagingSenderId: "641870709715",
-    appId: "1:641870709715:web:c6b35f1598045aac0da526"
+    apiKey: "AIzaSyAqehWmWJG8VidrDL_FYVby3ssoRODuYO8",
+    authDomain: "kiei-451-ab7d5.firebaseapp.com",
+    projectId: "kiei-451-ab7d5",
+    storageBucket: "kiei-451-ab7d5.appspot.com",
+    messagingSenderId: "942506131765",
+    appId: "1:942506131765:web:7be4540e5d71ed0fc9cc7c"
   };
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
