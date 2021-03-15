@@ -88,7 +88,7 @@ firebase.auth().onAuthStateChanged(async function(user)
             // </div>
             // `)
         // }
-
+        
         //THIS CHANGES THE PRODUCT CATEOGORY AS YOU NAVIGATE
         let adjustCategory = function()
         {
@@ -188,6 +188,36 @@ firebase.auth().onAuthStateChanged(async function(user)
             firebase.auth().signOut()
             document.location.href = 'login.html'
         })
+        //userId
+        let userId = user.uid
+        // like collection
+        const liked = []
+        let likedProductCollection = await db.collection('liked')
+            .where ('userId','==', user.uid)
+            .get()
+        let likedProducts = likedProductCollection.docs
+
+        for (let i=0; i < likedProducts.length; i++){
+            let likedProduct = likedProducts[i].data()
+            let likedProductID = likedProduct.likedProductId
+            liked.push(likedProductID)
+          } 
+          console.log(liked)
+
+        // disliked collection
+
+          const disliked = []
+          let dislikedProductCollection = await db.collection('disliked')
+              .where ('userId','==', user.uid)
+              .get()
+          let dislikedProducts = dislikedProductCollection.docs
+  
+          for (let i=0; i < dislikedProducts.length; i++){
+              let dislikedProduct = dislikedProducts[i].data()
+              let dislikedProductID = dislikedProduct.dislikedProductId
+              disliked.push(dislikedProductID)
+            } 
+            console.log(disliked)
         
       //THIS PRINTS THE PRODUCTS FOR DENIM CATEGORY
         let printProducts = async function()
@@ -234,6 +264,8 @@ firebase.auth().onAuthStateChanged(async function(user)
                     let productPrice = productData.price
                     let brand = productData.brand
                     let productID = productData.product_number
+                    
+                    
                     // <div class="product-grid">
                     document.querySelector('.products').insertAdjacentHTML('beforeend', `
 
@@ -254,6 +286,19 @@ firebase.auth().onAuthStateChanged(async function(user)
                         <div class="text-black text-center text-xl text-bold">${productPrice}</div>
                     </div>                
                     `)
+
+                    if (liked.includes(productID)) {
+                        document.querySelector(`.product-${productID} .product-image`).classList.remove('border-black')
+                        document.querySelector(`.product-${productID} .product-image`).classList.remove('opacity-20')
+                        document.querySelector(`.product-${productID} .product-image`).classList.add('border-tan')
+                    } else if (disliked.includes(productID)) {
+                        document.querySelector(`.product-${productID} .product-image`).classList.remove('border-black')
+                        document.querySelector(`.product-${productID} .product-image`).classList.remove('border-tan')
+                        document.querySelector(`.product-${productID} .product-image`).classList.add('border-gray-100')
+                        document.querySelector(`.product-${productID} .product-image`).classList.add('opacity-20')
+                    } else {                        
+                    }
+                    
                     document.querySelector(`.product-${productID}`).addEventListener('mouseover', function (event)
                             {
                                 event.preventDefault()
@@ -279,29 +324,31 @@ firebase.auth().onAuthStateChanged(async function(user)
                         window.open(`${productURL}`,'_blank')                        
                     })
 
-                    document.querySelector(`.product-${productID} .btn`).addEventListener('click', function (event)
+                    document.querySelector(`.product-${productID} .btn`).addEventListener('click', async function (event)
                     {
                         event.preventDefault()
-                        // if (document.querySelector(`.product-${productID} .product-image`).classList.contains('border-black')) || (document.querySelector(`.product-${productID} .product-image`).classList.contains('border-gray-100'))  
-                        // {
                             document.querySelector(`.product-${productID} .product-image`).classList.remove('border-black')
                             document.querySelector(`.product-${productID} .product-image`).classList.remove('opacity-20')
                             document.querySelector(`.product-${productID} .product-image`).classList.add('border-tan')
-                    //     } else {
-                    //     document.querySelector(`.product-${productID} .product-image`).classList.remove('border-tan')
-                    //     // document.querySelector(`.product-${productID} .product-image`).classList.remove('opacity-20')
-                    //     document.querySelector(`.product-${productID} .product-image`).classList.add('border-black')
-                    // }
-
+                            await db.collection('liked').doc(`${userId}-${productID}`).set({
+                                userId: user.uid,
+                                likedProductId: productID
+                            })
+                            await db.collection('disliked').doc(`${userId}-${productID}`).delete()
                     })
 
-                    document.querySelector(`.product-${productID} .btn2`).addEventListener('click', function (event)
+                    document.querySelector(`.product-${productID} .btn2`).addEventListener('click', async function (event)
                     {
                         event.preventDefault()
                         document.querySelector(`.product-${productID} .product-image`).classList.remove('border-black')
                         document.querySelector(`.product-${productID} .product-image`).classList.remove('border-tan')
                         document.querySelector(`.product-${productID} .product-image`).classList.add('border-gray-100')
                         document.querySelector(`.product-${productID} .product-image`).classList.add('opacity-20')
+                        await db.collection('disliked').doc(`${userId}-${productID}`).set({
+                            userId: user.uid,
+                            dislikedProductId: productID
+                        })
+                        await db.collection('liked').doc(`${userId}-${productID}`).delete()
                     })
                 }
             }
@@ -367,13 +414,26 @@ firebase.auth().onAuthStateChanged(async function(user)
                         <div class="text-black text-center text-xl text-bold">${productPrice}</div>
                     </div>                
                     `)
+
+                    if (liked.includes(productID)) {
+                        document.querySelector(`.product-${productID} .product-image`).classList.remove('border-black')
+                        document.querySelector(`.product-${productID} .product-image`).classList.remove('opacity-20')
+                        document.querySelector(`.product-${productID} .product-image`).classList.add('border-tan')
+                    } else if (disliked.includes(productID)) {
+                        document.querySelector(`.product-${productID} .product-image`).classList.remove('border-black')
+                        document.querySelector(`.product-${productID} .product-image`).classList.remove('border-tan')
+                        document.querySelector(`.product-${productID} .product-image`).classList.add('border-gray-100')
+                        document.querySelector(`.product-${productID} .product-image`).classList.add('opacity-20')
+                    } else {                        
+                    }
+                    
                     document.querySelector(`.product-${productID}`).addEventListener('mouseover', function (event)
                             {
                                 event.preventDefault()
                                 document.querySelector(`.product-${productID} .buynow`).classList.remove('hidden')
                                 document.querySelector(`.product-${productID} .btn`).classList.remove('hidden')
                                 document.querySelector(`.product-${productID} .btn2`).classList.remove('hidden')
-                                document.querySelector(`.product-${productID} .product-image`).classList.add('opacity-80')
+                                // document.querySelector(`.product-${productID} .product-image`).classList.add('opacity-80')
                                 document.querySelector(`.product-${productID} .product-image`).classList.add('transition', 'duration-500', 'ease-in-out', 'transform', 'hover:-translate-y-1', 'hover:scale-110')
                             })
                         
@@ -383,42 +443,40 @@ firebase.auth().onAuthStateChanged(async function(user)
                                 document.querySelector(`.product-${productID} .buynow`).classList.add('hidden')
                                 document.querySelector(`.product-${productID} .btn`).classList.add('hidden')
                                 document.querySelector(`.product-${productID} .btn2`).classList.add('hidden')
-                                document.querySelector(`.product-${productID} .product-image`).classList.remove('opacity-80')
+                                // document.querySelector(`.product-${productID} .product-image`).classList.remove('opacity-80')
                                 document.querySelector(`.product-${productID} .product-image`).classList.add('transition', 'duration-900', 'ease-in-out', 'transform', 'hover:-translate-y-1', 'hover:scale-110')
                             })
-                    document.querySelector(`.product-${productID} .buynow`).addEventListener('click', function (event){
-                        event.preventDefault()
-                        onclick="window.open('${productURL})"
-                    })
-
+                    
                     document.querySelector(`.product-${productID} .buynow`).addEventListener('click', function ()
                     {
                         window.open(`${productURL}`,'_blank')                        
                     })
 
-                    document.querySelector(`.product-${productID} .btn`).addEventListener('click', function (event)
+                    document.querySelector(`.product-${productID} .btn`).addEventListener('click', async function (event)
                     {
                         event.preventDefault()
-                        // if (document.querySelector(`.product-${productID} .product-image`).classList.contains('border-black')) || (document.querySelector(`.product-${productID} .product-image`).classList.contains('border-gray-100'))  
-                        // {
                             document.querySelector(`.product-${productID} .product-image`).classList.remove('border-black')
                             document.querySelector(`.product-${productID} .product-image`).classList.remove('opacity-20')
                             document.querySelector(`.product-${productID} .product-image`).classList.add('border-tan')
-                    //     } else {
-                    //     document.querySelector(`.product-${productID} .product-image`).classList.remove('border-tan')
-                    //     // document.querySelector(`.product-${productID} .product-image`).classList.remove('opacity-20')
-                    //     document.querySelector(`.product-${productID} .product-image`).classList.add('border-black')
-                    // }
-
+                            await db.collection('liked').doc(`${userId}-${productID}`).set({
+                                userId: user.uid,
+                                likedProductId: productID
+                            })
+                            await db.collection('disliked').doc(`${userId}-${productID}`).delete()
                     })
 
-                    document.querySelector(`.product-${productID} .btn2`).addEventListener('click', function (event)
+                    document.querySelector(`.product-${productID} .btn2`).addEventListener('click', async function (event)
                     {
                         event.preventDefault()
                         document.querySelector(`.product-${productID} .product-image`).classList.remove('border-black')
                         document.querySelector(`.product-${productID} .product-image`).classList.remove('border-tan')
                         document.querySelector(`.product-${productID} .product-image`).classList.add('border-gray-100')
                         document.querySelector(`.product-${productID} .product-image`).classList.add('opacity-20')
+                        await db.collection('disliked').doc(`${userId}-${productID}`).set({
+                            userId: user.uid,
+                            dislikedProductId: productID
+                        })
+                        await db.collection('liked').doc(`${userId}-${productID}`).delete()
                     })
                 }
             }
@@ -473,22 +531,6 @@ firebase.auth().onAuthStateChanged(async function(user)
                     </div>
                     `)
 
-                    // <div class="border-2 border-white m-8">
-                    // <form class="quiz text-center text-black justify-center">
-                    
-                    //     <p class="text-black">What is your preferred pant fit?</p>
-    
-                    //     <input type="radio" id="Straight" name="pant_fit" value="Straight">
-                    //     <label for="Straight">Straight</label><br>
-    
-                    //     <input type="radio" id="Slim" name="pant_fit" value="Slim">
-                    //     <label for="Slim">Slim</label><br>
-    
-                    //     <input type="radio" id="Skinny" name="pant_fit" value="Skinny">
-                    //     <label for="Skinny">Skinny</label><br>
-    
-                    //     <button class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-xl">Submit</button>
-                    // </form>
 
                     document.querySelector('.quiz').addEventListener('submit', async function(event){
 
@@ -633,24 +675,6 @@ firebase.auth().onAuthStateChanged(async function(user)
                 </div>
                 `)
             }
-        //     <div class="quizImages flex"
-                        
-        //     <p class="text-black text-xl p-4">What is your favorite ${category} brand?</p>
-
-        //     <input type="radio" id="allbirds" name="sneakers" value="allbirds">
-        //     <label class="quizOption" for="allbirds">allbirds</label><br>
-
-        //     <input type="radio" id="Nike" name="sneakers" value="Nike">
-        //     <label for="Nike">Nike</label><br>
-
-        //     <input type="radio" id="Greats" name="sneakers" value="Greats">
-        //     <label for="Greats">Greats</label><br>
-        
-        // </div>
-
-        // <button class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-xl">Submit</button>
-                        
-
 
             else
             {
