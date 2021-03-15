@@ -254,24 +254,54 @@ firebase.auth().onAuthStateChanged(async function(user)
                         <div class="text-black text-center text-xl text-bold">${productPrice}</div>
                     </div>                
                     `)
-            document.querySelector(`.product-${productID}`).addEventListener('mouseover', function (event)
+                    document.querySelector(`.product-${productID}`).addEventListener('mouseover', function (event)
+                            {
+                                event.preventDefault()
+                                document.querySelector(`.product-${productID} .buynow`).classList.remove('hidden')
+                                document.querySelector(`.product-${productID} .btn`).classList.remove('hidden')
+                                document.querySelector(`.product-${productID} .btn2`).classList.remove('hidden')
+                                // document.querySelector(`.product-${productID} .product-image`).classList.add('opacity-80')
+                                document.querySelector(`.product-${productID} .product-image`).classList.add('transition', 'duration-500', 'ease-in-out', 'transform', 'hover:-translate-y-1', 'hover:scale-110')
+                            })
+                        
+                    document.querySelector(`.product-${productID}`).addEventListener('mouseout', function (event)
+                            {
+                                event.preventDefault()
+                                document.querySelector(`.product-${productID} .buynow`).classList.add('hidden')
+                                document.querySelector(`.product-${productID} .btn`).classList.add('hidden')
+                                document.querySelector(`.product-${productID} .btn2`).classList.add('hidden')
+                                // document.querySelector(`.product-${productID} .product-image`).classList.remove('opacity-80')
+                                document.querySelector(`.product-${productID} .product-image`).classList.add('transition', 'duration-900', 'ease-in-out', 'transform', 'hover:-translate-y-1', 'hover:scale-110')
+                            })
+                    
+                    document.querySelector(`.product-${productID} .buynow`).addEventListener('click', function ()
                     {
-                        event.preventDefault()
-                        document.querySelector(`.product-${productID} .buynow`).classList.remove('hidden')
-                        document.querySelector(`.product-${productID} .btn`).classList.remove('hidden')
-                        document.querySelector(`.product-${productID} .btn2`).classList.remove('hidden')
-                        document.querySelector(`.product-${productID} .product-image`).classList.add('opacity-80')
-                        document.querySelector(`.product-${productID} .product-image`).classList.add('transition', 'duration-500', 'ease-in-out', 'transform', 'hover:-translate-y-1', 'hover:scale-110')
+                        window.open(`${productURL}`,'_blank')                        
                     })
-                
-            document.querySelector(`.product-${productID}`).addEventListener('mouseout', function (event)
+
+                    document.querySelector(`.product-${productID} .btn`).addEventListener('click', function (event)
                     {
                         event.preventDefault()
-                        document.querySelector(`.product-${productID} .buynow`).classList.add('hidden')
-                        document.querySelector(`.product-${productID} .btn`).classList.add('hidden')
-                        document.querySelector(`.product-${productID} .btn2`).classList.add('hidden')
-                        document.querySelector(`.product-${productID} .product-image`).classList.remove('opacity-80')
-                        document.querySelector(`.product-${productID} .product-image`).classList.add('transition', 'duration-900', 'ease-in-out', 'transform', 'hover:-translate-y-1', 'hover:scale-110')
+                        // if (document.querySelector(`.product-${productID} .product-image`).classList.contains('border-black')) || (document.querySelector(`.product-${productID} .product-image`).classList.contains('border-gray-100'))  
+                        // {
+                            document.querySelector(`.product-${productID} .product-image`).classList.remove('border-black')
+                            document.querySelector(`.product-${productID} .product-image`).classList.remove('opacity-20')
+                            document.querySelector(`.product-${productID} .product-image`).classList.add('border-tan')
+                    //     } else {
+                    //     document.querySelector(`.product-${productID} .product-image`).classList.remove('border-tan')
+                    //     // document.querySelector(`.product-${productID} .product-image`).classList.remove('opacity-20')
+                    //     document.querySelector(`.product-${productID} .product-image`).classList.add('border-black')
+                    // }
+
+                    })
+
+                    document.querySelector(`.product-${productID} .btn2`).addEventListener('click', function (event)
+                    {
+                        event.preventDefault()
+                        document.querySelector(`.product-${productID} .product-image`).classList.remove('border-black')
+                        document.querySelector(`.product-${productID} .product-image`).classList.remove('border-tan')
+                        document.querySelector(`.product-${productID} .product-image`).classList.add('border-gray-100')
+                        document.querySelector(`.product-${productID} .product-image`).classList.add('opacity-20')
                     })
                 }
             }
@@ -337,24 +367,58 @@ firebase.auth().onAuthStateChanged(async function(user)
                         <div class="text-black text-center text-xl text-bold">${productPrice}</div>
                     </div>                
                     `)
-            document.querySelector(`.product-${productID}`).addEventListener('mouseover', function (event)
-                    {
+                    document.querySelector(`.product-${productID}`).addEventListener('mouseover', function (event)
+                            {
+                                event.preventDefault()
+                                document.querySelector(`.product-${productID} .buynow`).classList.remove('hidden')
+                                document.querySelector(`.product-${productID} .btn`).classList.remove('hidden')
+                                document.querySelector(`.product-${productID} .btn2`).classList.remove('hidden')
+                                document.querySelector(`.product-${productID} .product-image`).classList.add('opacity-80')
+                                document.querySelector(`.product-${productID} .product-image`).classList.add('transition', 'duration-500', 'ease-in-out', 'transform', 'hover:-translate-y-1', 'hover:scale-110')
+                            })
+                        
+                    document.querySelector(`.product-${productID}`).addEventListener('mouseout', function (event)
+                            {
+                                event.preventDefault()
+                                document.querySelector(`.product-${productID} .buynow`).classList.add('hidden')
+                                document.querySelector(`.product-${productID} .btn`).classList.add('hidden')
+                                document.querySelector(`.product-${productID} .btn2`).classList.add('hidden')
+                                document.querySelector(`.product-${productID} .product-image`).classList.remove('opacity-80')
+                                document.querySelector(`.product-${productID} .product-image`).classList.add('transition', 'duration-900', 'ease-in-out', 'transform', 'hover:-translate-y-1', 'hover:scale-110')
+                            })
+                    document.querySelector(`.product-${productID} .buynow`).addEventListener('click', function (event){
                         event.preventDefault()
-                        document.querySelector(`.product-${productID} .buynow`).classList.remove('hidden')
-                        document.querySelector(`.product-${productID} .btn`).classList.remove('hidden')
-                        document.querySelector(`.product-${productID} .btn2`).classList.remove('hidden')
-                        document.querySelector(`.product-${productID} .product-image`).classList.add('opacity-80')
-                        document.querySelector(`.product-${productID} .product-image`).classList.add('transition', 'duration-500', 'ease-in-out', 'transform', 'hover:-translate-y-1', 'hover:scale-110')
+                        onclick="window.open('${productURL})"
                     })
-                
-            document.querySelector(`.product-${productID}`).addEventListener('mouseout', function (event)
+
+                    document.querySelector(`.product-${productID} .buynow`).addEventListener('click', function ()
+                    {
+                        window.open(`${productURL}`,'_blank')                        
+                    })
+
+                    document.querySelector(`.product-${productID} .btn`).addEventListener('click', function (event)
                     {
                         event.preventDefault()
-                        document.querySelector(`.product-${productID} .buynow`).classList.add('hidden')
-                        document.querySelector(`.product-${productID} .btn`).classList.add('hidden')
-                        document.querySelector(`.product-${productID} .btn2`).classList.add('hidden')
-                        document.querySelector(`.product-${productID} .product-image`).classList.remove('opacity-80')
-                        document.querySelector(`.product-${productID} .product-image`).classList.add('transition', 'duration-900', 'ease-in-out', 'transform', 'hover:-translate-y-1', 'hover:scale-110')
+                        // if (document.querySelector(`.product-${productID} .product-image`).classList.contains('border-black')) || (document.querySelector(`.product-${productID} .product-image`).classList.contains('border-gray-100'))  
+                        // {
+                            document.querySelector(`.product-${productID} .product-image`).classList.remove('border-black')
+                            document.querySelector(`.product-${productID} .product-image`).classList.remove('opacity-20')
+                            document.querySelector(`.product-${productID} .product-image`).classList.add('border-tan')
+                    //     } else {
+                    //     document.querySelector(`.product-${productID} .product-image`).classList.remove('border-tan')
+                    //     // document.querySelector(`.product-${productID} .product-image`).classList.remove('opacity-20')
+                    //     document.querySelector(`.product-${productID} .product-image`).classList.add('border-black')
+                    // }
+
+                    })
+
+                    document.querySelector(`.product-${productID} .btn2`).addEventListener('click', function (event)
+                    {
+                        event.preventDefault()
+                        document.querySelector(`.product-${productID} .product-image`).classList.remove('border-black')
+                        document.querySelector(`.product-${productID} .product-image`).classList.remove('border-tan')
+                        document.querySelector(`.product-${productID} .product-image`).classList.add('border-gray-100')
+                        document.querySelector(`.product-${productID} .product-image`).classList.add('opacity-20')
                     })
                 }
             }
