@@ -57,41 +57,6 @@ firebase.auth().onAuthStateChanged(async function(user)
         let productsDiv = document.querySelector('.products')
         let sideNavDiv = document.querySelector('.sidebar')
 
-<<<<<<< HEAD
-
-        // function for quiz form
-        // function renderQuiz(brandsArray){
-            // productsDiv.insertAdjacentHTML('beforeend', `
-            // <div class="selector border-2 border-gray-100 p-8">
-            //     <form class="quiz text-center text-black">
-
-            //     <p class="text-black text-xl p-4">What is your favorite ${category} brand?</p>
-            
-            //     <div class="quizImages flex">
-            // `)
-            // for (let i= 0; i<brandsArray.length; i++) {
-            //     let company = brandsArray[i]
-            //     productsDiv.insertAdjacentHTML('beforeend', `        
-            //         <input type="radio" id=${company.brand} name=${company.category} value=${company.brand}/>
-            //         <label class="quizOption" for=${company.brand}>
-            //         <img src=${company.image}></img>
-            //         </label>
-            // }
-            // `)
-
-            // productsDiv.insertAdjacentHTML('beforeend', `
-            //     </div>
-
-            //     <button class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 mt-8 rounded-xl">Submit</button>
-                
-
-            //     </form>
-            // </div>
-            // `)
-        // }
-        
-=======
->>>>>>> b1413fca140efc357f991816a26f98f6d0fea151
         //THIS CHANGES THE PRODUCT CATEOGORY AS YOU NAVIGATE
         let adjustCategory = function()
         {
