@@ -1095,9 +1095,52 @@ document.querySelector('.upload-products').addEventListener('click',  async func
       "url": "https://www.ae.com/us/en/p/men/straight-jeans/original-straight-jeans/ae-airflex-original-straight-jean/0111_5378_099?menu=cat4840004",
       "image_url": "https://s7d2.scene7.com/is/image/aeo/0111_5378_099_of?$pdp-m-opt$&fmt=webp"
     },
-
+    {
+      "dockey": 100,
+      "product_number": 100,
+      "brand": "Banana Republic",
+      "category": "denim",
+      "product_name": "Skinny Legacy Jean",
+      "pant_fit": "Skinny",
+      "price": "$98.00",
+      "url": "https://bananarepublic.gap.com/browse/product.do?pid=500649002&cid=1016380&pcid=5389&vid=1&nav=meganav%3AMen%3AMen%27s%20Clothing%3ADenim&grid=pds_0_5_1#pdp-page-content",
+      "image_url": "https://bananarepublic.gap.com/webcontent/0017/575/218/cn17575218.jpg"
+    },
+    {
+      "dockey": 101,
+      "product_number": 101,
+      "brand": "Banana Republic",
+      "category": "denim",
+      "product_name": "Skinny Legacy Jean",
+      "pant_fit": "Skinny",
+      "price": "$98.00",
+      "url": "https://bananarepublic.gap.com/browse/product.do?pid=500650002&cid=1016380&pcid=5389&vid=1&nav=meganav%3AMen%3AMen%27s%20Clothing%3ADenim&grid=pds_2_5_1#pdp-page-content",
+      "image_url": "https://bananarepublic.gap.com/webcontent/0019/391/340/cn19391340.jpg"
+    },
+    {
+      "dockey": 102,
+      "product_number": 102,
+      "brand": "Banana Republic",
+      "category": "denim",
+      "product_name": "Straight Legacy Jean",
+      "pant_fit": "Straight",
+      "price": "$98.00",
+      "url": "https://bananarepublic.gap.com/browse/product.do?pid=510154002&cid=36827&pcid=5389&vid=1&nav=meganav%3AMen%3AMen%27s%20Clothing%3ADenim&grid=pds_0_3_1#pdp-page-content",
+      "image_url": "https://bananarepublic.gap.com/webcontent/0017/761/251/cn17761251.jpg"
+    },
+    {
+      "dockey": 103,
+      "product_number": 103,
+      "brand": "Banana Republic",
+      "category": "denim",
+      "product_name": "Straight Legacy Jean",
+      "pant_fit": "Straight",
+      "price": "$98.00",
+      "url": "https://bananarepublic.gap.com/browse/product.do?pid=510159002&cid=36827&pcid=5389&vid=1&nav=meganav%3AMen%3AMen%27s%20Clothing%3ADenim&grid=pds_2_3_1#pdp-page-content",
+      "image_url": "https://bananarepublic.gap.com/webcontent/0019/574/526/cn19574526.jpg"
+    },
+    
   ]
-   
 
 console.log(productList.length)
 
