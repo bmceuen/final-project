@@ -57,6 +57,7 @@ firebase.auth().onAuthStateChanged(async function(user)
         let productsDiv = document.querySelector('.products')
         let sideNavDiv = document.querySelector('.sidebar')
 
+<<<<<<< HEAD
 
         // function for quiz form
         // function renderQuiz(brandsArray){
@@ -89,6 +90,8 @@ firebase.auth().onAuthStateChanged(async function(user)
             // `)
         // }
         
+=======
+>>>>>>> b1413fca140efc357f991816a26f98f6d0fea151
         //THIS CHANGES THE PRODUCT CATEOGORY AS YOU NAVIGATE
         let adjustCategory = function()
         {
