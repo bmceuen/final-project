@@ -5,6 +5,7 @@ firebase.auth().onAuthStateChanged(async function(user)
     {
         //this checks to see if they have answered the t-shirt question
         
+
                     let querySnapshot1 = await db.collection('answers')
                                                 .where('userId', '==', user.uid)
                                                 .where('category', '==', 't-shirts')
@@ -159,6 +160,15 @@ firebase.auth().onAuthStateChanged(async function(user)
         //userId
         let userId = user.uid
         // like collection
+
+        // let response = await fetch('/.netlify/functions/get_likes')
+        // let userLikes = response.json()
+
+        // for(let i =0;i<userLikes.length;i++)
+        // {
+            
+        // }
+
         const liked = []
         let likedProductCollection = await db.collection('liked')
             .where ('userId','==', user.uid)
