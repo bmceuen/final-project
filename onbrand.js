@@ -127,7 +127,7 @@ firebase.auth().onAuthStateChanged(async function(user)
             }
             
             let userPantFit = document.querySelector('#pant_fit').value
-            console.log(userPantFit)
+            // console.log(userPantFit)
             document.querySelector('.filters').classList.remove('hidden')
             document.querySelector('#pant_fit').addEventListener('change', async function (event)
             {
@@ -170,7 +170,7 @@ firebase.auth().onAuthStateChanged(async function(user)
             let likedProductID = likedProduct.likedProductId
             liked.push(likedProductID)
           } 
-          console.log(liked)
+        //   console.log(liked)
 
         // disliked collection
 
@@ -185,7 +185,7 @@ firebase.auth().onAuthStateChanged(async function(user)
               let dislikedProductID = dislikedProduct.dislikedProductId
               disliked.push(dislikedProductID)
             } 
-            console.log(disliked)
+            // console.log(disliked)
         
       //THIS PRINTS THE PRODUCTS FOR DENIM CATEGORY
         let printProducts = async function()
@@ -201,7 +201,7 @@ firebase.auth().onAuthStateChanged(async function(user)
             for (let j = 0;j<answers.length;j++)
             {
                 let answer = answers[j].data()
-                console.log(answer)
+                // console.log(answer)
             
             let findPantFitAnswer = await db.collection('answers')
                                             .where('userId', '==', user.uid)
@@ -209,11 +209,11 @@ firebase.auth().onAuthStateChanged(async function(user)
                                             .get()
                     
             let fitAnswers = findPantFitAnswer.docs
-            console.log(fitAnswers)
+            // console.log(fitAnswers)
             for(let k = 0;k<fitAnswers.length;k++)
             {
                 let fitAnswer = fitAnswers[k].data()
-                console.log(fitAnswer)
+                // console.log(fitAnswer)
             
             
             let productList = await db.collection('products').where('brand', '==',answer.answer)
@@ -339,8 +339,8 @@ firebase.auth().onAuthStateChanged(async function(user)
             {
                 let answer = answers[j].data()
                 
-                console.log(answer.answer)
-                console.log(answer.category)
+                // console.log(answer.answer)
+                // console.log(answer.category)
                 
             let productList = await db.collection('products').where('brand', '==', answer.answer)
                                                             .where('category', '==', answer.category)                                            
@@ -748,10 +748,6 @@ firebase.auth().onAuthStateChanged(async function(user)
             adjustCategory()
         })
 
-        document.querySelector(`.sneakers`).addEventListener('click', async function(event)
-            {
-                console.log('hello')
-            })
     }
         
 
