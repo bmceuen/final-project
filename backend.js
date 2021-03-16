@@ -619,8 +619,8 @@ document.querySelector('.upload-products').addEventListener('click',  async func
       "product_name": "Nike Air Force 1 '07",
       "pant_fit": "",
       "price": "$90",
-      "url": "https://www.Nike.com/t/air-force-1-07-mens-shoe-5QFp5Z/CW2288-111",
-      "image_url": "https://static.Nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/4f37fca8-6bce-43e7-ad07-f57ae3c13142/air-force-1-07-mens-shoe-5QFp5Z.jpg"
+      "url": "https://www.nike.com/t/air-force-1-07-mens-shoe-5QFp5Z/CW2288-111",
+      "image_url": "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/4f37fca8-6bce-43e7-ad07-f57ae3c13142/air-force-1-07-mens-shoe-5QFp5Z.jpg"
     },
     {
       "dockey": 57,
@@ -630,8 +630,8 @@ document.querySelector('.upload-products').addEventListener('click',  async func
       "product_name": "Nike Air Force 1 '07",
       "pant_fit": "",
       "price": "$90",
-      "url": "https://www.Nike.com/t/air-force-1-07-mens-shoe-xDpsTk/CT2302-002",
-      "image_url": "https://static.Nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/d762c5e2-ae49-4208-99df-484594b51e5f/air-force-1-07-mens-shoe-xDpsTk.jpg"
+      "url": "https://www.nike.com/t/air-force-1-07-mens-shoe-xDpsTk/CT2302-002",
+      "image_url": "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/d762c5e2-ae49-4208-99df-484594b51e5f/air-force-1-07-mens-shoe-xDpsTk.jpg"
     },
     {
       "dockey": 58,
@@ -641,8 +641,8 @@ document.querySelector('.upload-products').addEventListener('click',  async func
       "product_name": "Nike Blazer Low '77 Vintage",
       "pant_fit": "",
       "price": "$85",
-      "url": "https://www.Nike.com/t/blazer-low-77-vintage-mens-shoe-pkcNzf/DA6364-400",
-      "image_url": "https://static.Nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/0b195a4d-d73b-4d27-baa9-653d167ca2bd/blazer-low-77-vintage-mens-shoe-pkcNzf.jpg"
+      "url": "https://www.nike.com/t/blazer-low-77-vintage-mens-shoe-pkcNzf/DA6364-400",
+      "image_url": "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/0b195a4d-d73b-4d27-baa9-653d167ca2bd/blazer-low-77-vintage-mens-shoe-pkcNzf.jpg"
     },
     {
       "dockey": 59,
@@ -652,8 +652,8 @@ document.querySelector('.upload-products').addEventListener('click',  async func
       "product_name": "Nike Blazer Low '77 Vintage",
       "pant_fit": "",
       "price": "$85",
-      "url": "https://www.Nike.com/t/blazer-low-77-vintage-mens-shoe-pkcNzf/DA6364-101",
-      "image_url": "https://static.Nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/fca59736-ff84-4797-9e64-0978d3b43731/blazer-low-77-vintage-mens-shoe-pkcNzf.jpg"
+      "url": "https://www.nike.com/t/blazer-low-77-vintage-mens-shoe-pkcNzf/DA6364-101",
+      "image_url": "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/fca59736-ff84-4797-9e64-0978d3b43731/blazer-low-77-vintage-mens-shoe-pkcNzf.jpg"
     },
     {
       "dockey": 60,
@@ -663,8 +663,8 @@ document.querySelector('.upload-products').addEventListener('click',  async func
       "product_name": "Nike Air Max 90",
       "pant_fit": "",
       "price": "$120",
-      "url": "https://www.Nike.com/t/air-max-90-mens-shoe-6n3vKB/CN8490-100",
-      "image_url": "https://static.Nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/zwxes8uud05rkuei1mpt/air-max-90-mens-shoe-6n3vKB.jpg"
+      "url": "https://www.nike.com/t/air-max-90-mens-shoe-6n3vKB/CN8490-100",
+      "image_url": "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/zwxes8uud05rkuei1mpt/air-max-90-mens-shoe-6n3vKB.jpg"
     },
     {
       "dockey": 61,
@@ -1012,7 +1012,7 @@ document.querySelector('.upload-products').addEventListener('click',  async func
       "product_number": 92,
       "brand": "Levi's",
       "category": "denim",
-      "product_name": "510 SKINNY FIT MEN'S JEANS",
+      "product_name": "510� SKINNY FIT MEN'S JEANS",
       "pant_fit": "Skinny",
       "price": "$59.99",
       "url": "https://www.levi.com/US/en_US/apparel/clothing/bottoms/510-skinny-fit-mens-jeans/p/055100692",
@@ -1023,12 +1023,79 @@ document.querySelector('.upload-products').addEventListener('click',  async func
       "product_number": 93,
       "brand": "Levi's",
       "category": "denim",
-      "product_name": "510 SKINNY FIT MEN'S JEANS",
+      "product_name": "510� SKINNY FIT MEN'S JEANS",
       "pant_fit": "Skinny",
       "price": "$59.99",
       "url": "https://www.levi.com/US/en_US/apparel/clothing/bottoms/510-skinny-fit-mens-jeans/p/055100675",
       "image_url": "https://lsco.scene7.com/is/image/lsco/055100675-front-pdp?fmt=jpeg&qlt=70,1&op_sharpen=0&resMode=sharp2&op_usm=0.8,1,10,0&fit=crop,0&wid=1155&hei=1540"
-    }
+    },
+    {
+      "dockey": 94,
+      "product_number": 94,
+      "brand": "Paige",
+      "category": "denim",
+      "product_name": "Croft - Seeker",
+      "pant_fit": "Skinny",
+      "price": "$199.00",
+      "url": "https://www.paige.com/p/croft--m725743-4016",
+      "image_url": "https://www.paige.com/binaries/content/gallery/products/m/m725743-4016/m725743-4016_01.jpg/m725743-4016_01.jpg/brxp:xlProduct"
+    },
+    {
+      "dockey": 95,
+      "product_number": 95,
+      "brand": "Paige",
+      "category": "denim",
+      "product_name": "Croft - Canos",
+      "pant_fit": "Skinny",
+      "price": "$199.00",
+      "url": "https://www.paige.com/p/croft--m725697-4022",
+      "image_url": "https://www.paige.com/binaries/content/gallery/products/m/m725697-4022/m725697-4022_01.jpg/m725697-4022_01.jpg/brxp:xlProduct"
+    },
+    {
+      "dockey": 96,
+      "product_number": 96,
+      "brand": "American Eagle",
+      "category": "denim",
+      "product_name": "AE AirFlex+ Skinny Jean",
+      "pant_fit": "Skinny",
+      "price": "$29.96",
+      "url": "https://www.ae.com/us/en/p/men/skinny-jeans/skinny-jeans/ae-airflex-skinny-jean/0119_5091_851?menu=cat4840004",
+      "image_url": "https://s7d2.scene7.com/is/image/aeo/0119_5091_851_of?$pdp-m-opt$&fmt=webp"
+    },
+    {
+      "dockey": 97,
+      "product_number": 97,
+      "brand": "American Eagle",
+      "category": "denim",
+      "product_name": "AE AirFlex+ Skinny Jean",
+      "pant_fit": "Skinny",
+      "price": "$37.46",
+      "url": "https://www.ae.com/us/en/p/men/skinny-jeans/skinny-jeans/ae-airflex-skinny-jean/0121_4162_273?menu=cat4840004",
+      "image_url": "https://s7d2.scene7.com/is/image/aeo/0121_4162_273_of?$pdp-m-opt$&fmt=webp"
+    },
+    {
+      "dockey": 98,
+      "product_number": 98,
+      "brand": "American Eagle",
+      "category": "denim",
+      "product_name": "AE AirFlex+ Original Straight Jean",
+      "pant_fit": "Straight",
+      "price": "$37.46",
+      "url": "https://www.ae.com/us/en/p/men/straight-jeans/original-straight-jeans/ae-airflex-original-straight-jean/0111_4891_928?menu=cat4840004",
+      "image_url": "https://s7d2.scene7.com/is/image/aeo/0111_4891_928_of?$pdp-m-opt$&fmt=webp"
+    },
+    {
+      "dockey": 99,
+      "product_number": 99,
+      "brand": "American Eagle",
+      "category": "denim",
+      "product_name": "AE AirFlex+ Original Straight Jean",
+      "pant_fit": "Straight",
+      "price": "$37.46",
+      "url": "https://www.ae.com/us/en/p/men/straight-jeans/original-straight-jeans/ae-airflex-original-straight-jean/0111_5378_099?menu=cat4840004",
+      "image_url": "https://s7d2.scene7.com/is/image/aeo/0111_5378_099_of?$pdp-m-opt$&fmt=webp"
+    },
+
   ]
    
 
