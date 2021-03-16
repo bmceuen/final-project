@@ -614,57 +614,57 @@ document.querySelector('.upload-products').addEventListener('click',  async func
     {
       "dockey": 56,
       "product_number": 56,
-      "brand": "nike",
+      "brand": "Nike",
       "category": "sneakers",
       "product_name": "Nike Air Force 1 '07",
       "pant_fit": "",
       "price": "$90",
-      "url": "https://www.nike.com/t/air-force-1-07-mens-shoe-5QFp5Z/CW2288-111",
-      "image_url": "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/4f37fca8-6bce-43e7-ad07-f57ae3c13142/air-force-1-07-mens-shoe-5QFp5Z.jpg"
+      "url": "https://www.Nike.com/t/air-force-1-07-mens-shoe-5QFp5Z/CW2288-111",
+      "image_url": "https://static.Nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/4f37fca8-6bce-43e7-ad07-f57ae3c13142/air-force-1-07-mens-shoe-5QFp5Z.jpg"
     },
     {
       "dockey": 57,
       "product_number": 57,
-      "brand": "nike",
+      "brand": "Nike",
       "category": "sneakers",
       "product_name": "Nike Air Force 1 '07",
       "pant_fit": "",
       "price": "$90",
-      "url": "https://www.nike.com/t/air-force-1-07-mens-shoe-xDpsTk/CT2302-002",
-      "image_url": "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/d762c5e2-ae49-4208-99df-484594b51e5f/air-force-1-07-mens-shoe-xDpsTk.jpg"
+      "url": "https://www.Nike.com/t/air-force-1-07-mens-shoe-xDpsTk/CT2302-002",
+      "image_url": "https://static.Nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/d762c5e2-ae49-4208-99df-484594b51e5f/air-force-1-07-mens-shoe-xDpsTk.jpg"
     },
     {
       "dockey": 58,
       "product_number": 58,
-      "brand": "nike",
+      "brand": "Nike",
       "category": "sneakers",
       "product_name": "Nike Blazer Low '77 Vintage",
       "pant_fit": "",
       "price": "$85",
-      "url": "https://www.nike.com/t/blazer-low-77-vintage-mens-shoe-pkcNzf/DA6364-400",
-      "image_url": "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/0b195a4d-d73b-4d27-baa9-653d167ca2bd/blazer-low-77-vintage-mens-shoe-pkcNzf.jpg"
+      "url": "https://www.Nike.com/t/blazer-low-77-vintage-mens-shoe-pkcNzf/DA6364-400",
+      "image_url": "https://static.Nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/0b195a4d-d73b-4d27-baa9-653d167ca2bd/blazer-low-77-vintage-mens-shoe-pkcNzf.jpg"
     },
     {
       "dockey": 59,
       "product_number": 59,
-      "brand": "nike",
+      "brand": "Nike",
       "category": "sneakers",
       "product_name": "Nike Blazer Low '77 Vintage",
       "pant_fit": "",
       "price": "$85",
-      "url": "https://www.nike.com/t/blazer-low-77-vintage-mens-shoe-pkcNzf/DA6364-101",
-      "image_url": "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/fca59736-ff84-4797-9e64-0978d3b43731/blazer-low-77-vintage-mens-shoe-pkcNzf.jpg"
+      "url": "https://www.Nike.com/t/blazer-low-77-vintage-mens-shoe-pkcNzf/DA6364-101",
+      "image_url": "https://static.Nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/fca59736-ff84-4797-9e64-0978d3b43731/blazer-low-77-vintage-mens-shoe-pkcNzf.jpg"
     },
     {
       "dockey": 60,
       "product_number": 60,
-      "brand": "nike",
+      "brand": "Nike",
       "category": "sneakers",
       "product_name": "Nike Air Max 90",
       "pant_fit": "",
       "price": "$120",
-      "url": "https://www.nike.com/t/air-max-90-mens-shoe-6n3vKB/CN8490-100",
-      "image_url": "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/zwxes8uud05rkuei1mpt/air-max-90-mens-shoe-6n3vKB.jpg"
+      "url": "https://www.Nike.com/t/air-max-90-mens-shoe-6n3vKB/CN8490-100",
+      "image_url": "https://static.Nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/zwxes8uud05rkuei1mpt/air-max-90-mens-shoe-6n3vKB.jpg"
     },
     {
       "dockey": 61,
@@ -1012,7 +1012,7 @@ document.querySelector('.upload-products').addEventListener('click',  async func
       "product_number": 92,
       "brand": "Levi's",
       "category": "denim",
-      "product_name": "510� SKINNY FIT MEN'S JEANS",
+      "product_name": "510 SKINNY FIT MEN'S JEANS",
       "pant_fit": "Skinny",
       "price": "$59.99",
       "url": "https://www.levi.com/US/en_US/apparel/clothing/bottoms/510-skinny-fit-mens-jeans/p/055100692",
@@ -1023,7 +1023,7 @@ document.querySelector('.upload-products').addEventListener('click',  async func
       "product_number": 93,
       "brand": "Levi's",
       "category": "denim",
-      "product_name": "510� SKINNY FIT MEN'S JEANS",
+      "product_name": "510 SKINNY FIT MEN'S JEANS",
       "pant_fit": "Skinny",
       "price": "$59.99",
       "url": "https://www.levi.com/US/en_US/apparel/clothing/bottoms/510-skinny-fit-mens-jeans/p/055100675",
