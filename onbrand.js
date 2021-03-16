@@ -657,8 +657,8 @@ firebase.auth().onAuthStateChanged(async function(user)
                             <img src="images/allbirds.jpg"></img>
                             </label>
 
-                            <input type="radio" id="Nike" name="sneakers" value="Nike">
-                            <label class="quizOption" for="Nike">
+                            <input type="radio" id="nike" name="sneakers" value="nike">
+                            <label class="quizOption" for="nike">
                             <img src="images/nike.jpg"></img>
                             </label>
 
