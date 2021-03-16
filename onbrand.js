@@ -350,7 +350,7 @@ firebase.auth().onAuthStateChanged(async function(user)
             
             
             let products = productList.docs
-            console.log(products)
+            // console.log(products)
             
                 for(let i=0; i<products.length;i++)
                 {
